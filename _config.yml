@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            adrian
 tagline:          'a seeker of shortcuts'
-description:      'an overeducated, underachieving human, just trying to be a little less sucky every day'
+description:      "tracking my days on Earth, I'll make another blog when I leave here"
 url:              http://adrianmcli.com
 baseurl:          /
 
