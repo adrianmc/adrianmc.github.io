@@ -7,9 +7,9 @@ permalink:        pretty
 relative_permalinks: true
 
 # Setup
-title:            adrian li
+title:            adrian
 tagline:          'a seeker of shortcuts'
-description:      'an overeducated underachieving human, just trying to be a little less sucky every day'
+description:      'an overeducated, underachieving human, just trying to be a little less sucky every day'
 url:              http://adrianmcli.com
 baseurl:          /
 
@@ -20,7 +20,7 @@ author:
 paginate:         5
 
 # Custom vars
-version:          2.1.0
+version:          1.0
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/adrianmc
