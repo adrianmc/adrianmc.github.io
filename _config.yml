@@ -8,8 +8,8 @@ relative_permalinks: true
 
 # Setup
 title:            adrian
-tagline:          'a seeker of shortcuts'
-description:      "tracking my days on Earth, I'll make another blog when I leave here"
+tagline:          'seeker of shortcuts'
+description:      "just trying to make my way through life"
 url:              http://adrianmcli.com
 baseurl:          /
 

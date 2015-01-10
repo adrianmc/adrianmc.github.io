@@ -167,6 +167,15 @@ a.sidebar-nav-item:focus {
 }
 
 
+/* Personal FAB127 Theme */
+
+.theme-base-fab .sidebar {
+  background-color: #fab127;
+}
+.theme-base-fab .content a,
+.theme-base-fab .related-posts li a:hover {
+  color: #fab127;
+}
 
 /*
  * Themes
