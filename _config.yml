@@ -9,9 +9,10 @@ relative_permalinks: true
 # Setup
 title:            adrian
 tagline:          'seeker of shortcuts'
-description:      "just trying to make my way through life"
+description:      'sometimes the most powerful drive comes from a quiet desperation'
 url:              http://adrianmcli.com
 baseurl:          /
+name:             "Adrian Li's Blog"
 
 author:
   name:           'Adrian Li'

@@ -4,13 +4,481 @@
  <title>adrian</title>
  <link href="http://adrianmcli.com/atom.xml" rel="self"/>
  <link href="http://adrianmcli.com/"/>
- <updated>2015-01-11T02:09:26+08:00</updated>
+ <updated>2015-01-15T09:41:11+08:00</updated>
  <id>http://adrianmcli.com</id>
  <author>
    <name>Adrian Li</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>The Beginning</title>
+   <link href="http://adrianmcli.com/2015/01/14/the-beginning/"/>
+   <updated>2015-01-14T00:00:00+08:00</updated>
+   <id>http://adrianmcli.com/2015/01/14/the-beginning</id>
+   <content type="html">&lt;p&gt;This is the story of how I will attempt to start a profitable online business in a year and a half. I have an employment contract that will end in June of 2016 and that&amp;#39;s why I am on such a tight deadline. Nevertheless, I&amp;#39;ve always believed in &lt;a href=&quot;http://en.wikipedia.org/wiki/Parkinson%27s_law&quot;&gt;Parkinson&amp;#39;s Law&lt;/a&gt;, where:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;work expands so as to fill the time available for its completion&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I&amp;#39;ll probably blog about it a little more later on, but this is something I have tested numerous times. I adhere very strongly to the idea of &amp;quot;sink or swim&amp;quot;, or in other words: I know that if I put myself in the deep end, I&amp;#39;ll learn to swim. The hard part is having the courage to drop myself into the water without any way out. And so, here begins my journey.&lt;/p&gt;
+
+&lt;h2&gt;Weekly and Monthly Evaluations&lt;/h2&gt;
+
+&lt;p&gt;One of the best (and simplest) posts I&amp;#39;ve read on productivity and personal development is &lt;a href=&quot;http://www.lifehack.org/articles/productivity/the-only-2-tricks-you-need-for-maximum-productivity.html&quot;&gt;The Only 2 Tricks You Need for Maximum Productivity&lt;/a&gt;. It can be summarized in the following two points:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Plot your day&lt;/li&gt;
+&lt;li&gt;Carve out time each week to reflect and calibrate&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As a result of this, there are a couple things I am aiming to do. &lt;/p&gt;
+
+&lt;h3&gt;A Daily Habit&lt;/h3&gt;
+
+&lt;p&gt;The Miracle Morning&lt;/p&gt;
+
+&lt;p&gt;I will wake up at 4:30am and be out the door running and/or exercising by 5am. No excuses.&lt;/p&gt;
+
+&lt;h3&gt;7-Day Evaluations and 28-Day Evaluations&lt;/h3&gt;
+
+&lt;p&gt;A re-evaluation of my progress every 7 days, and also another more macro evaluation of my progress every 28 days. These evaluations are also kind of like summaries for what worked and what didn&amp;#39;t work over the previous span of time. This allows me to better keep track of my progress and not so easily forget what I learned along the way. For the purposes of this blog, I&amp;#39;ll only be posting the 28-day evaluations here.&lt;/p&gt;
+
+&lt;h2&gt;See you out there...&lt;/h2&gt;
+
+&lt;p&gt;to finish the post:
+- read the 2 productivity hacks
+- finish plotting out my day above
+- talk about the miracle morning&lt;/p&gt;
+
+&lt;h2&gt;Inline HTML elements&lt;/h2&gt;
+
+&lt;p&gt;HTML defines a long list of available inline tags, a complete list of which can be found on the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element&quot;&gt;Mozilla Developer Network&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;To bold text&lt;/strong&gt;, use &lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;To italicize text&lt;/em&gt;, use &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Abbreviations, like &lt;abbr title=&quot;HyperText Markup Langage&quot;&gt;HTML&lt;/abbr&gt; should use &lt;code&gt;&amp;lt;abbr&amp;gt;&lt;/code&gt;, with an optional &lt;code&gt;title&lt;/code&gt; attribute for the full phrase.&lt;/li&gt;
+&lt;li&gt;Citations, like &lt;cite&gt;&amp;mdash; Mark otto&lt;/cite&gt;, should use &lt;code&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Deleted&lt;/del&gt; text should use &lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt; and &lt;ins&gt;inserted&lt;/ins&gt; text should use &lt;code&gt;&amp;lt;ins&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Superscript &lt;sup&gt;text&lt;/sup&gt; uses &lt;code&gt;&amp;lt;sup&amp;gt;&lt;/code&gt; and subscript &lt;sub&gt;text&lt;/sub&gt; uses &lt;code&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Most of these elements are styled by browsers with few modifications on our part.&lt;/p&gt;
+
+&lt;h2&gt;Heading&lt;/h2&gt;
+
+&lt;p&gt;Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+
+&lt;h3&gt;Code&lt;/h3&gt;
+
+&lt;p&gt;Cum sociis natoque penatibus et magnis dis &lt;code&gt;code element&lt;/code&gt; montes, nascetur ridiculus mus.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Example can be run directly in your JavaScript console&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Create a function that takes two arguments and returns the sum of those arguments&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;return a + b&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Call the function&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.&lt;/p&gt;
+
+&lt;h3&gt;Gists via GitHub Pages&lt;/h3&gt;
+
+&lt;p&gt;Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/5555251.js?file=gist.md&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.&lt;/p&gt;
+
+&lt;h3&gt;Lists&lt;/h3&gt;
+
+&lt;p&gt;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et.&lt;/li&gt;
+&lt;li&gt;Donec id elit non mi porta gravida at eget metus.&lt;/li&gt;
+&lt;li&gt;Nulla vitae elit libero, a pharetra augue.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Vestibulum id ligula porta felis euismod semper.&lt;/li&gt;
+&lt;li&gt;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/li&gt;
+&lt;li&gt;Maecenas sed diam eget risus varius blandit sit amet non magna.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HyperText Markup Language (HTML)&lt;/dt&gt;
+  &lt;dd&gt;The language used to describe and define the content of a Web page&lt;/dd&gt;
+
+  &lt;dt&gt;Cascading Style Sheets (CSS)&lt;/dt&gt;
+  &lt;dd&gt;Used to describe the appearance of Web content&lt;/dd&gt;
+
+  &lt;dt&gt;JavaScript (JS)&lt;/dt&gt;
+  &lt;dd&gt;The programming language used to build advanced Web sites and applications&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.&lt;/p&gt;
+
+&lt;h3&gt;Images&lt;/h3&gt;
+
+&lt;p&gt;Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://placehold.it/800x400&quot; alt=&quot;placeholder&quot; title=&quot;Large example image&quot;&gt;
+&lt;img src=&quot;http://placehold.it/400x200&quot; alt=&quot;placeholder&quot; title=&quot;Medium example image&quot;&gt;
+&lt;img src=&quot;http://placehold.it/200x200&quot; alt=&quot;placeholder&quot; title=&quot;Small example image&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Tables&lt;/h3&gt;
+
+&lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Upvotes&lt;/th&gt;
+      &lt;th&gt;Downvotes&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Totals&lt;/td&gt;
+      &lt;td&gt;21&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alice&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bob&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Charlie&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Want to see something else added? &lt;a href=&quot;https://github.com/poole/poole/issues/new&quot;&gt;Open an issue.&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The 7 Day Startup Review</title>
+   <link href="http://adrianmcli.com/2015/01/14/the-7-day-startup-review/"/>
+   <updated>2015-01-14T00:00:00+08:00</updated>
+   <id>http://adrianmcli.com/2015/01/14/the-7-day-startup-review</id>
+   <content type="html">&lt;h1&gt;Review&lt;/h1&gt;
+
+&lt;p&gt;Goal: From Wantrepreneur to Entrepreneur&lt;/p&gt;
+
+&lt;h1&gt;Notes&lt;/h1&gt;
+
+&lt;p&gt;Avoid
+- Sexy ideas
+- Asking for opinions on your ideas
+- Making assumptions&lt;/p&gt;
+
+&lt;p&gt;Let people &lt;em&gt;vote with their wallets&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Things may come to those who wait ... but only things left by those who hustle&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;3 Core Things:
+1. idea
+2. execution
+3. hustle&lt;/p&gt;
+
+&lt;p&gt;Medium term goal: execution is your ability to present your idea just as well as the best ideas in the world&lt;/p&gt;
+
+&lt;p&gt;Hustle is relentlessly pursuing what needs to be done at the time.&lt;/p&gt;
+
+&lt;p&gt;*Hustle for an early stage startup is generally about spending your time on the things that are most likely to bring you customers &lt;/p&gt;
+
+&lt;p&gt;Hustle = Getting Customers (through any way possible)&lt;/p&gt;
+
+&lt;p&gt;AFTER LAUNCH: you need to get more people paying you. You have to relentlessly pursue your best method of getting customers, and not the stuff you naturally gravitate to.
+- GETTING MORE CUSTOMERS&lt;/p&gt;
+
+&lt;p&gt;DO NOT GIVE YOURSELF TIME TO ASSUME THINGS - LAUNCH FIRST AND DECIDE BASED ON REAL CUSTOMER BEHAVIOUR
+- learn from real data&lt;/p&gt;
+
+&lt;p&gt;Validation does not work when the answer is not a definite yes (if not fuck yes, than no)&lt;/p&gt;
+
+&lt;p&gt;People don&amp;#39;t know what they &lt;em&gt;don&amp;#39;t&lt;/em&gt; want until they are forced to open their wallets.&lt;/p&gt;
+
+&lt;p&gt;BEWARE OF HAVING TOO MUCH TIME - you will be inefficient
+&amp;quot;If you are a long way out, you make up tasks that you think are important.&amp;quot;&lt;/p&gt;
+
+&lt;h2&gt;7 Day Schedule&lt;/h2&gt;
+
+&lt;p&gt;Day 1: Idea
+Day 2: Have something to launch
+Day 3: Name
+Day 4: Landing page
+Day 5: Getting in front of people
+Day 6: Measuring success
+Day 7: Launch&lt;/p&gt;
+
+&lt;p&gt;Email him your progress&lt;/p&gt;
+
+&lt;h3&gt;Day 1 - The Idea&lt;/h3&gt;
+
+&lt;p&gt;9 Elements of a Bootstrapped Business Idea
+1. Enjoyable daily tasks
+2. Product/founder fit
+- your skills
+- what you&amp;#39;re known for
+- where you can provide the most value
+3. Scalable business model
+4. Operates profitably without the founder
+5. An asset you can sell
+- think about what you can build as a long term asset
+- site traffic is great, but a large e-mail list is much better
+6. Large market potential
+7. Tap into pain or pleasure differentiators
+8. Unique lead generation advantage
+- think about how you will generate leads
+- what will make you and your company unique?
+9. Ability to launch quickly
+- choose an idea that you can launch and modify quickly&lt;/p&gt;
+
+&lt;p&gt;DO NOT PICK LOW-HANGING FRUIT&lt;/p&gt;
+
+&lt;p&gt;Creation must happen EVERY DAY&lt;/p&gt;
+
+&lt;p&gt;Solve problems where people are ALREADY paying for solutions.
+- relieve pain points without cultivating new behaviours from customers
+- ask the question: Are people already paying for a solution to the same problem&lt;/p&gt;
+
+&lt;p&gt;Actionable Steps:
+- Brainstorm a bunch of ideas
+- Evaluate them against the 9 element checklist &lt;/p&gt;
+
+&lt;h3&gt;Day 2 - The MVP&lt;/h3&gt;
+
+&lt;p&gt;Do not over-minimize and under-viablize (Big M, small V, MVP).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;do not put out an MVP that is much worse than current products&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Example:
+1. put up screenshots, explain the product
+2. client pays, make them do a few actions (for data collection purposes)
+3. tell them their product will be ready soon
+4. call and talk them through what&amp;#39;s being done; give them the product&lt;/p&gt;
+
+&lt;p&gt;Forget about automating everything, figure out what you can do manually now to launch within a week.&lt;/p&gt;
+
+&lt;p&gt;DO NOT worry about how ugly or painful it looks on our end, what matters is that you can DELIVER ON CUSTOMER EXPECTATIONS.
+- mimic the customer experience as quickly as possible&lt;/p&gt;
+
+&lt;p&gt;Focus ONLY on what you need to do to make the MVP something ppl would pay for
+- just PROVE that ppl would pay for it&lt;/p&gt;
+
+&lt;p&gt;DO NOT DO FREE VERSIONS&lt;/p&gt;
+
+&lt;p&gt;Chapter Sumamry
+- How can you perform a servie or offer a product to real customers?
+- How will you get them to pay you after 7 days?
+- How close will your MVP be to the final vision of your product?
+- What can you do manually (hint: probably everything)?
+- What can you do yourself instead of delegating?
+- How can you make your offer as real as possible for the end customer?&lt;/p&gt;
+
+&lt;p&gt;Actionable Steps:
+- Write down what you will launch on day 7
+- What will your customers get?
+    - What is included?
+    - What is excluded?
+- What will be automated?
+- What will be manually done (in the short term)?&lt;/p&gt;
+
+&lt;h3&gt;Day 3 - The Name&lt;/h3&gt;
+
+&lt;p&gt;Don&amp;#39;t overthink it, we are going for an &amp;quot;acceptable&amp;quot; name. Just come up with 10 names that aren&amp;#39;t ridiculous.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Is it taken?&lt;/li&gt;
+&lt;li&gt;Is it simple?&lt;/li&gt;
+&lt;li&gt;don&amp;#39;t make up words&lt;/li&gt;
+&lt;li&gt;don&amp;#39;t misspell words&lt;/li&gt;
+&lt;li&gt;fewer than 12 characters&lt;/li&gt;
+&lt;li&gt;Is it easy to say out loud?&lt;/li&gt;
+&lt;li&gt;Do you like it?&lt;/li&gt;
+&lt;li&gt;Does it make sense for your idea (this is a bonus)?&lt;/li&gt;
+&lt;li&gt;Broader is better.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Actionable Steps:
+- Generate 10 names
+- Go through the checklist&lt;/p&gt;
+
+&lt;h3&gt;Day 4 - Build the site (in one day for less than $100)&lt;/h3&gt;
+
+&lt;p&gt;3 Options:
+1. Create a site to capture e-mails before you launch in 4 days time
+2. Create a site that pre-sells your product before you launch it
+3. Create the actual sales page you will use on launch day&lt;/p&gt;
+
+&lt;p&gt;Day 7 = MUST HAVE A PAY BUTTON&lt;/p&gt;
+
+&lt;p&gt;Check out:
+- ElegantThemes
+- infusionsoft
+- mailchimp
+- getdrip
+- copywriting checklist (dane maxwell)&lt;/p&gt;
+
+&lt;h3&gt;Day 5 - Marketing&lt;/h3&gt;
+
+&lt;h4&gt;Content Marketing&lt;/h4&gt;
+
+&lt;p&gt;If you&amp;#39;re searching for something, then other people probably are as well. Scratching your own itch may not work for business ideas, but it can work for developing a marketing plan. Find a gap in what you are searching for and produce detailed blog posts devoted to those topics.&lt;/p&gt;
+
+&lt;p&gt;topic ideas
+- in-depth content based around customer problems that your solution solves
+- make actionable and useful content to your target
+- make sure it&amp;#39;s interesting to the audience
+- catch e-mails
+- don&amp;#39;t worry about SEO, focus on valuable content
+- try different mediums
+    - blog post
+    - infographic 
+    - video
+    - podcasts
+    - ebooks 
+    - whitepapers
+    - etc.&lt;/p&gt;
+
+&lt;p&gt;create LOTS of content
+consider doing guest posts and interviews on other people&amp;#39;s blogs&lt;/p&gt;
+
+&lt;h4&gt;Start Sending Emails&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;build a list BEFORE launch&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Building a List
+1. add people you already know early on
+2. have a landing page
+3. send out high quality relevant information
+4. GIVE away something relevant and valuable to get people on the list
+    - software
+    - plugins
+    - templates
+    - ebooks
+    - training courses
+    - etc.
+5. create good blog posts and create content relevant to the post that you can give away
+    - even if it&amp;#39;s something kind of trivial
+    - the fact that it might be a simple template doesn&amp;#39;t matter
+    - it makes it look like you&amp;#39;re offering tons of value
+    - people might just download it to see what it is, and by then they&amp;#39;re already subconsciously more involved
+6. Keep your emails personal and ENCOURAGE PEOPLE TO REPLY
+    - get feedback
+    - build goodwill&lt;/p&gt;
+
+&lt;h4&gt;Podcasting&lt;/h4&gt;
+
+&lt;p&gt;see guide (link in book)&lt;/p&gt;
+
+&lt;h4&gt;Forums and Online Groups&lt;/h4&gt;
+
+&lt;p&gt;join a forum, be an active member, build trust&lt;/p&gt;
+
+&lt;p&gt;check out Dynamitecircle.com&lt;/p&gt;
+
+&lt;p&gt;consider joining a paid group in your niche&lt;/p&gt;
+
+&lt;h4&gt;Guest Blogging&lt;/h4&gt;
+
+&lt;p&gt;Consider doing a guest post for an industry you quit, because your story is relevant to them&lt;/p&gt;
+
+&lt;h4&gt;Listing Sites&lt;/h4&gt;
+
+&lt;p&gt;add to AlternativeTo.net&lt;/p&gt;
+
+&lt;p&gt;Every industry have sites that list businesses in different ways.
+- refer to book
+- google around&lt;/p&gt;
+
+&lt;h4&gt;Webinars&lt;/h4&gt;
+
+&lt;p&gt;John Dumas&amp;#39; strategy
+- build up a large audience
+- gave away an eBook as a freebie, got your e-mail, then told you about a free webinar
+- the webinars were super helpful
+- for those who are interested in more info, he has a special deal for membership in the community&lt;/p&gt;
+
+&lt;h4&gt;Presenting&lt;/h4&gt;
+
+&lt;p&gt;local, in-person events&lt;/p&gt;
+
+&lt;h4&gt;Doing Free Work&lt;/h4&gt;
+
+&lt;p&gt;Reach out and do things for free.&lt;/p&gt;
+
+&lt;h4&gt;Media Coverage&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;pull lists of relevant journalists to contact&lt;/li&gt;
+&lt;li&gt;chased down other entrepreneurs, and see who covered them&lt;/li&gt;
+&lt;li&gt;paid attention to parts of our own business that could be newsworthy and looked for STORIES&lt;/li&gt;
+&lt;li&gt;drop everything to be featured in the media&lt;/li&gt;
+&lt;li&gt;talk about yourselves all the time, be transparent&lt;/li&gt;
+&lt;li&gt;sent your own best articles to other sites&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;Chapter Conclusion&lt;/h4&gt;
+
+&lt;p&gt;At the end of the day, it&amp;#39;s just about &amp;quot;getting your message out to qualified people as efficiently as possible&amp;quot;. Do it in a way that utilizes your unique strengths and gets you customers.&lt;/p&gt;
+
+&lt;p&gt;Action: Put together a rough plan for the first week or two of launch.&lt;/p&gt;
+
+&lt;h3&gt;Day 6 - Set Targets&lt;/h3&gt;
+
+&lt;p&gt;How do we know if we&amp;#39;ve failed or not? Rampant success and immediate flops are obvious, but what do we do with everything in between?&lt;/p&gt;
+
+&lt;p&gt;Focus on the One Metric That Matters (&amp;quot;OMTM&amp;quot;) at different stages of the business.&lt;/p&gt;
+
+&lt;p&gt;During launch, focus on the number of people who signup and pay. Set a reasonable number that takes into consideration your reach, the marketing efforts, and price point.&lt;/p&gt;
+
+&lt;p&gt;Overly aggressive targets can demotivate you. Shoot for a few customers early on and a realistic monthly growth rate.&lt;/p&gt;
+
+&lt;p&gt;WP Curve Example:
+- 10 customers in the first month (or $500 in monthly recurring revenue)
+- 10% per month for at least six months&lt;/p&gt;
+
+&lt;p&gt;MRR has always been the metric of choice&lt;/p&gt;
+
+&lt;p&gt;The OMTM can change over time&lt;/p&gt;
+
+&lt;p&gt;OMTM Gauge:
+- see book for chart (location 1213 of 1697)
+- THIS IS REALLY IMPORTANT&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Introducing Hyde</title>
