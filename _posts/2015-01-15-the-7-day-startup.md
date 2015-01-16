@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "Book Review and Summary: The 7 Day Startup"
+title: "Book Summary: The 7 Day Startup"
 ---
-
-[Official Site](http://wpcurve.com/the-7-day-startup/) - [Amazon Link](http://www.amazon.com/The-Day-Startup-Learn-Launch-ebook/dp/B00NZFKB8S)
 
 I first heard about this book from this [Reddit post](http://www.reddit.com/r/startups/comments/2rz8aj/here_is_how_i_built_my_first_mvp_in_less_than_a/). After Googling the book title, I found out that the theme of the book was to teach you to finally stop being a wantrepreneur and start executing on something. The story of the author, Dan Norris, is that he spent a year developing a startup which didn't really go anywhere, and was actually going to have to look for a job because he was running out of money. However, with just a couple weeks left, he cranked out a wildly successful business by launching in 7 days. I thought this was very intriguing, so I bought it and gave it a read. Below are the major ideas I've been able to extract from this book.
 
-# A note about my review process
+[Official Site](http://wpcurve.com/the-7-day-startup/) - [Amazon Link](http://www.amazon.com/The-Day-Startup-Learn-Launch-ebook/dp/B00NZFKB8S)
 
-When reading the book, I typed up a lot of raw notes into a text file. In making this book review, I am essentially trying to summarize the main points I've learned into a neat format so that I can look back at it later on. The bulk of this post is essentially just a book summary mixed with my own personal thoughts as well. As a result, I have written things below that aren't in the book, but are inspired by the ideas in the book.
+# A note about my process
+
+When reading the book, I typed up a lot of raw notes into a text file. In making this book summary, I am essentially trying to summarize the main points I've learned into a neat format so that I can look back at it later on. The bulk of this post is a book summary mixed with my own personal thoughts as well. As a result, I have written things below that aren't in the book, but are inspired by the ideas in the book.
 
  Keep in mind that this summary is what stood out to me and in no way does it represent the full scope of the book. The book goes into a lot more detail with a lot of links and other resources as well. I did not read the chapters of the book slated for what to do after the launch.
 
