@@ -3,7 +3,7 @@ layout: post
 title: The Beginning
 ---
 
-This is the story of how I will attempt to start a profitable online business in a year and a half. I have an employment contract that will end in June of 2016 and that's why I am on such a tight deadline. Nevertheless, I've always believed in [Parkinson's Law](http://en.wikipedia.org/wiki/Parkinson%27s_law), where:
+This is the story of how I will attempt to start a profitable online business in a year and a half. I have an employment contract that will end in June of 2016 and that's why I am on such a tight deadline. Nevertheless, I've always believed in [Parkinson's Law](http://en.wikipedia.org/wiki/Parkinson%27s_law).
 
 > work expands so as to fill the time available for its completion
 
