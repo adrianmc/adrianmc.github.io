@@ -68,7 +68,7 @@ You must *beware of having too much time* because this will lead you to become i
 
 - Day 1: Picking an **idea**
 - Day 2: Coming up with your **MVP** (what you will launch on Day 7)
-- Day 3: Pickin a **name**
+- Day 3: Picking a **name**
 - Day 4: Making a **landing page**
 - Day 5: Getting in front of people; **Marketing**
 - Day 6: **Measuring** success (goal and target setting)

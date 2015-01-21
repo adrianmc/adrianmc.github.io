@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      7 lessons from my first app failure &middot; adrian
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface|Special+Elite">
+  
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-fab">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          adrian
+        </a>
+      </h1>
+      <p class="lead">sometimes the most powerful drive comes from a quiet desperation</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive/">Archive</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/adrianmc">GitHub</a>
+      <span class="sidebar-nav-item">v1.0</span>
+    </nav>
+
+    <p>&copy; 2015. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">7 lessons from my first app failure</h1>
+  <span class="post-date">21 Jan 2015</span>
+  <p>In the summer of 2013, I had the idea to make a mobile app, so I called up one of my friends and got to work. Over a year later, we launched <a href="https://play.google.com/store/apps/details?id=com.aheadstudios.talkalytics">Texty Time</a>. The project took so long and not too many people used it, so I decided I never wanted to touch or even think about it again. Recently, I was reading <a href="https://twitter.com/levelsio">@levelsio</a>&#39;s blog on how he planned to start <a href="https://levels.io/12-startups-12-months/">12 startups in 12 months</a>. For a lot of these projects, he had a project debrief page where he talks about what he learned from each of them. Suddenly, I realized that I myself have attemped (and failed) at making something akin to a &quot;startup&quot; as well (albeit very very humble and basic). This is the story of what I learned.</p>
+
+<p>As James Joyce said:</p>
+
+<blockquote>
+<p>Mistakes are the portals of discovery</p>
+</blockquote>
+
+<p>I didn&#39;t even realize it was a &quot;failure&quot;, because I didn&#39;t consider it to be a serious attempt. However, I realized that it would be an even bigger mistake if I failed to learn from the experience. So instead of running away from failure, here goes my attempt in trying to extract what lessons I&#39;ve learned from my first app failure.</p>
+
+<hr>
+
+<h1>Development</h1>
+
+<p>Throughout the development process, what affected us the most was our crippling technology, inefficient workflow, and overall lack of a market need for the product itself.</p>
+
+<h2>Crippling Technology</h2>
+
+<p>Technology was a big part of what determines if an app succeeds or fails. First of all, there was the issue of being unfamiliar with the technology we used. I had never coded for Android before, so we tried a few different things at first. </p>
+
+<p>Coming from web development, I tried PhoneGap because I believed in the power of HTML5. This was a mistake, because although it sounds great in theory, there was always too much lag and not enough control over how things would be rendered. The fact that we had to rely on web frameworks within a webview on an Android phone was bad enough, but dealing with a rapidly changing PhoneGap core made it even harder.</p>
+
+<h3>Lesson #1: Do not use technology that is relatively immature and rapidly changing.</h3>
+
+<ul>
+<li>Not only is it hard to make things work, it&#39;s even harder to keep things from breaking. When a technology is rapidly changing at its core, a lot of the things you&#39;ll be learning is going to change in the very near future.</li>
+<li>It was also nearly impossible to find tutorials and documentation on the more obscure but commonly used aspects of the technology. There was a severe lack of libraries and limited community support.</li>
+<li>It&#39;s important to get good at shipping a product, but how can you get good when you&#39;re trying to hit a moving target?</li>
+</ul>
+
+<p>After a couple of months or so, we decided to switch to coding in Java on native Android so the user could enjoy a more responsive and lag-free experience. I soon realized that working on Android in Java was painfully low-level, and the Android API itself was too rigid (not good for prototyping fast). Android was also prone to version fragmentation, so we experienced some API changes throughout our development. Getting the app itself onto the app store and making sure we had all the in-app payment and everything setup properly was also a hassle. There was also the issue that Google could change anything on us at any time.</p>
+
+<p>There were two major lessons here:</p>
+
+<h3>Lesson #2: Do not use technology that is slow for prototyping.</h3>
+
+<ul>
+<li>Java as a language is known to be verbose. It is very slow in terms of prototyping things. It would always take me a very long time to get some very simple things set up.</li>
+<li>Learn a little bit about a lot of languages so you get a good idea of what&#39;s out there and what you can use.</li>
+<li>Do not be afraid to try things out in a different language. Putting in a little time to figure out what works best is likely to be worth it in the long run.</li>
+</ul>
+
+<h3>Lesson #3: Do not develop in a market where there is a lack of control.</h3>
+
+<ul>
+<li>Control is one of the core aspects of entrepreneurship. If Google can force you to fit its guidelines (by threat of banning you), that is a bad sign.</li>
+<li>Always build something in a domain where you have the freedom to operate.</li>
+<li>All the hassle dealing with a controlled market will slow you down.
+
+<ul>
+<li>There is only one way to make payments, to setup screenshots, etc.</li>
+</ul></li>
+<li>Note that this is less of a problem if you&#39;re already very familiar with the market and can already prototype very quickly (maybe because you are an expert in the domain).</li>
+</ul>
+
+<h2>Inefficient Workflow</h2>
+
+<p>We were just two people with full-time occupations doing this on the side. What we lacked was a sense of urgency. We probably could have done everything we did in 20% of the time. There were months in which we made no progress at all. This is not only an issue with personality, but also of vision and values.</p>
+
+<h3>Lesson #4: Set hard deadlines to build a sense of urgency.</h3>
+
+<ul>
+<li>You need to prototype fast. You can&#39;t afford to spend months working on something that nobody is going to use.</li>
+<li>You need to focus on this one thing. You cannot have other hobbies, because it will only distract you from finishing.
+
+<ul>
+<li>You <em>can</em> ignore this lesson and do things as a side project, but just don&#39;t expect it to be successful.</li>
+</ul></li>
+</ul>
+
+<h2>Lack of Market Need</h2>
+
+<p>There was no clearly defined target market. It just sounded like something cool that people would pay for. We were banking on people who might be desperate to know about how their relationships were like through their texts. However, it was obvious that we overestimated the market need for such a product. As Seth Godin put it, you need to understand the &quot;tribe&quot; that will become your loyal early adopters.</p>
+
+<p>It wasn&#39;t enough to simply know that there might be desperate individuals out there. We tried to scratch our own itch because it was something cool that we wanted. That&#39;s all fine and good, but we should have prototyped and launched fast to really figure out how much market need there really was.</p>
+
+<h3>Lesson #5: Do market research.</h3>
+
+<ul>
+<li>Do not try to scratch your own itch without further research (or better yet, launching).</li>
+<li>Understand the people who you will eventually market to.</li>
+<li>Clearly define the &quot;tribe&quot;
+
+<ul>
+<li>Find out where they hang out</li>
+<li>Be valuable to them.</li>
+</ul></li>
+</ul>
+
+<hr>
+
+<h1>Marketing</h1>
+
+<h2>Pricing Too Low</h2>
+
+<p>We set a freemium model for the app because we were scared people would not download it. In retrospect, we should have charged full price for the app. We were very timid and were scared that nobody would buy it if we did that. I now think that if what you made is not worth charging full price on day one, then you are almost certainly doomed. Social networks and other types of entrepreneurship aside, note that we are focusing on solo entrepreneurship through coding apps or webapps.</p>
+
+<h3>Lesson #6: Aim to charge on day one, or re-evaluate your idea.</h3>
+
+<ul>
+<li>If you don&#39;t even believe in your product, why should anyone else?</li>
+<li>If you developed a product that was valuable, you should be able to see how you might pay for it yourself.
+
+<ul>
+<li>The fact that you are hesitant to charge for your product should get you to question whether your product is all that valuable to the market in the first place.</li>
+</ul></li>
+</ul>
+
+<p>You could also use ads, but that is a mixed bag. Unless you know that people will have your app open for long periods of time, this is likely not going to work for you. This works well in games and radio apps, but for almost everything else it is unlikely to be a useful strategy.</p>
+
+<h2>Lack of Focus</h2>
+
+<p>Admittedly, this is still an area which I don&#39;t know much at all. However, there is a lot of great content out there, and I intend to read it. When we were marketing this app, we just haphazardly sent it to a lot of people we knew along with some random bloggers. There was no strategy at all, and we probably should have asked for more advice on the web along with doing a lot more research on our part. Later on, we even dumped some money into Google Adwords and Facebook ad campaigns, but to no avail.</p>
+
+<h3>Lesson #7: Have a focus and strategy in marketing.</h3>
+
+<ul>
+<li>Don&#39;t just buy Facebook and Google ads haphazardly, but actually have a targeted approach.
+
+<ul>
+<li>Use long tail keywords.</li>
+</ul></li>
+<li>Make sure to calcualate the cost of acquisition and conversion, even if it&#39;s just an estimate.</li>
+<li>Look for the &#39;tribe&#39; and seek out what others have done.</li>
+</ul>
+
+<h1>Conclusion</h1>
+
+<p class="message">Launching fast eliminates a whole class of problems.</p>
+
+<p>This was a very costly lesson. A year of your life (albeit mostly part-time) is a high price to pay. A lot of these problems and issues would have come to light much sooner if I set myself a a tight deadline and prototyped fast. I now realize that prototyping fast is not just for the sake of efficiency, but it also completely eliminates a whole bunch of problems.</p>
+
+<p>In other words, a lot of the problems I experienced above could have come to light a lot sooner or even completely avoided if I only just prototyped faster and launched sooner.</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2015/01/19/seth-godin-startup-school/">
+            What I learned from Seth Godin's Startup School
+            <small>19 Jan 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/01/16/providing-unique-value/">
+            Providing Unique Value
+            <small>16 Jan 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/01/15/the-7-day-startup/">
+            Book Summary: The 7 Day Startup
+            <small>15 Jan 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+
+  </body>
+</html>

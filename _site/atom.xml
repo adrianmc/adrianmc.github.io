@@ -4,13 +4,324 @@
  <title>adrian</title>
  <link href="http://adrianmcli.com/atom.xml" rel="self"/>
  <link href="http://adrianmcli.com/"/>
- <updated>2015-01-17T07:05:15-08:00</updated>
+ <updated>2015-01-21T08:45:34-08:00</updated>
  <id>http://adrianmcli.com</id>
  <author>
    <name>Adrian Li</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>7 lessons from my first app failure</title>
+   <link href="http://adrianmcli.com/2015/01/21/my-first-app-failure/"/>
+   <updated>2015-01-21T00:00:00-08:00</updated>
+   <id>http://adrianmcli.com/2015/01/21/my-first-app-failure</id>
+   <content type="html">&lt;p&gt;In the summer of 2013, I had the idea to make a mobile app, so I called up one of my friends and got to work. Over a year later, we launched &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.aheadstudios.talkalytics&quot;&gt;Texty Time&lt;/a&gt;. The project took so long and not too many people used it, so I decided I never wanted to touch or even think about it again. Recently, I was reading &lt;a href=&quot;https://twitter.com/levelsio&quot;&gt;@levelsio&lt;/a&gt;&amp;#39;s blog on how he planned to start &lt;a href=&quot;https://levels.io/12-startups-12-months/&quot;&gt;12 startups in 12 months&lt;/a&gt;. For a lot of these projects, he had a project debrief page where he talks about what he learned from each of them. Suddenly, I realized that I myself have attemped (and failed) at making something akin to a &amp;quot;startup&amp;quot; as well (albeit very very humble and basic). This is the story of what I learned.&lt;/p&gt;
+
+&lt;p&gt;As James Joyce said:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Mistakes are the portals of discovery&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I didn&amp;#39;t even realize it was a &amp;quot;failure&amp;quot;, because I didn&amp;#39;t consider it to be a serious attempt. However, I realized that it would be an even bigger mistake if I failed to learn from the experience. So instead of running away from failure, here goes my attempt in trying to extract what lessons I&amp;#39;ve learned from my first app failure.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1&gt;Development&lt;/h1&gt;
+
+&lt;p&gt;Throughout the development process, what affected us the most was our crippling technology, inefficient workflow, and overall lack of a market need for the product itself.&lt;/p&gt;
+
+&lt;h2&gt;Crippling Technology&lt;/h2&gt;
+
+&lt;p&gt;Technology was a big part of what determines if an app succeeds or fails. First of all, there was the issue of being unfamiliar with the technology we used. I had never coded for Android before, so we tried a few different things at first. &lt;/p&gt;
+
+&lt;p&gt;Coming from web development, I tried PhoneGap because I believed in the power of HTML5. This was a mistake, because although it sounds great in theory, there was always too much lag and not enough control over how things would be rendered. The fact that we had to rely on web frameworks within a webview on an Android phone was bad enough, but dealing with a rapidly changing PhoneGap core made it even harder.&lt;/p&gt;
+
+&lt;h3&gt;Lesson #1: Do not use technology that is relatively immature and rapidly changing.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Not only is it hard to make things work, it&amp;#39;s even harder to keep things from breaking. When a technology is rapidly changing at its core, a lot of the things you&amp;#39;ll be learning is going to change in the very near future.&lt;/li&gt;
+&lt;li&gt;It was also nearly impossible to find tutorials and documentation on the more obscure but commonly used aspects of the technology. There was a severe lack of libraries and limited community support.&lt;/li&gt;
+&lt;li&gt;It&amp;#39;s important to get good at shipping a product, but how can you get good when you&amp;#39;re trying to hit a moving target?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After a couple of months or so, we decided to switch to coding in Java on native Android so the user could enjoy a more responsive and lag-free experience. I soon realized that working on Android in Java was painfully low-level, and the Android API itself was too rigid (not good for prototyping fast). Android was also prone to version fragmentation, so we experienced some API changes throughout our development. Getting the app itself onto the app store and making sure we had all the in-app payment and everything setup properly was also a hassle. There was also the issue that Google could change anything on us at any time.&lt;/p&gt;
+
+&lt;p&gt;There were two major lessons here:&lt;/p&gt;
+
+&lt;h3&gt;Lesson #2: Do not use technology that is slow for prototyping.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java as a language is known to be verbose. It is very slow in terms of prototyping things. It would always take me a very long time to get some very simple things set up.&lt;/li&gt;
+&lt;li&gt;Learn a little bit about a lot of languages so you get a good idea of what&amp;#39;s out there and what you can use.&lt;/li&gt;
+&lt;li&gt;Do not be afraid to try things out in a different language. Putting in a little time to figure out what works best is likely to be worth it in the long run.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Lesson #3: Do not develop in a market where there is a lack of control.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Control is one of the core aspects of entrepreneurship. If Google can force you to fit its guidelines (by threat of banning you), that is a bad sign.&lt;/li&gt;
+&lt;li&gt;Always build something in a domain where you have the freedom to operate.&lt;/li&gt;
+&lt;li&gt;All the hassle dealing with a controlled market will slow you down.
+
+&lt;ul&gt;
+&lt;li&gt;There is only one way to make payments, to setup screenshots, etc.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Note that this is less of a problem if you&amp;#39;re already very familiar with the market and can already prototype very quickly (maybe because you are an expert in the domain).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Inefficient Workflow&lt;/h2&gt;
+
+&lt;p&gt;We were just two people with full-time occupations doing this on the side. What we lacked was a sense of urgency. We probably could have done everything we did in 20% of the time. There were months in which we made no progress at all. This is not only an issue with personality, but also of vision and values.&lt;/p&gt;
+
+&lt;h3&gt;Lesson #4: Set hard deadlines to build a sense of urgency.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You need to prototype fast. You can&amp;#39;t afford to spend months working on something that nobody is going to use.&lt;/li&gt;
+&lt;li&gt;You need to focus on this one thing. You cannot have other hobbies, because it will only distract you from finishing.
+
+&lt;ul&gt;
+&lt;li&gt;You &lt;em&gt;can&lt;/em&gt; ignore this lesson and do things as a side project, but just don&amp;#39;t expect it to be successful.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Lack of Market Need&lt;/h2&gt;
+
+&lt;p&gt;There was no clearly defined target market. It just sounded like something cool that people would pay for. We were banking on people who might be desperate to know about how their relationships were like through their texts. However, it was obvious that we overestimated the market need for such a product. As Seth Godin put it, you need to understand the &amp;quot;tribe&amp;quot; that will become your loyal early adopters.&lt;/p&gt;
+
+&lt;p&gt;It wasn&amp;#39;t enough to simply know that there might be desperate individuals out there. We tried to scratch our own itch because it was something cool that we wanted. That&amp;#39;s all fine and good, but we should have prototyped and launched fast to really figure out how much market need there really was.&lt;/p&gt;
+
+&lt;h3&gt;Lesson #5: Do market research.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Do not try to scratch your own itch without further research (or better yet, launching).&lt;/li&gt;
+&lt;li&gt;Understand the people who you will eventually market to.&lt;/li&gt;
+&lt;li&gt;Clearly define the &amp;quot;tribe&amp;quot;
+
+&lt;ul&gt;
+&lt;li&gt;Find out where they hang out&lt;/li&gt;
+&lt;li&gt;Be valuable to them.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1&gt;Marketing&lt;/h1&gt;
+
+&lt;h2&gt;Pricing Too Low&lt;/h2&gt;
+
+&lt;p&gt;We set a freemium model for the app because we were scared people would not download it. In retrospect, we should have charged full price for the app. We were very timid and were scared that nobody would buy it if we did that. I now think that if what you made is not worth charging full price on day one, then you are almost certainly doomed. Social networks and other types of entrepreneurship aside, note that we are focusing on solo entrepreneurship through coding apps or webapps.&lt;/p&gt;
+
+&lt;h3&gt;Lesson #6: Aim to charge on day one, or re-evaluate your idea.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If you don&amp;#39;t even believe in your product, why should anyone else?&lt;/li&gt;
+&lt;li&gt;If you developed a product that was valuable, you should be able to see how you might pay for it yourself.
+
+&lt;ul&gt;
+&lt;li&gt;The fact that you are hesitant to charge for your product should get you to question whether your product is all that valuable to the market in the first place.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You could also use ads, but that is a mixed bag. Unless you know that people will have your app open for long periods of time, this is likely not going to work for you. This works well in games and radio apps, but for almost everything else it is unlikely to be a useful strategy.&lt;/p&gt;
+
+&lt;h2&gt;Lack of Focus&lt;/h2&gt;
+
+&lt;p&gt;Admittedly, this is still an area which I don&amp;#39;t know much at all. However, there is a lot of great content out there, and I intend to read it. When we were marketing this app, we just haphazardly sent it to a lot of people we knew along with some random bloggers. There was no strategy at all, and we probably should have asked for more advice on the web along with doing a lot more research on our part. Later on, we even dumped some money into Google Adwords and Facebook ad campaigns, but to no avail.&lt;/p&gt;
+
+&lt;h3&gt;Lesson #7: Have a focus and strategy in marketing.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Don&amp;#39;t just buy Facebook and Google ads haphazardly, but actually have a targeted approach.
+
+&lt;ul&gt;
+&lt;li&gt;Use long tail keywords.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Make sure to calcualate the cost of acquisition and conversion, even if it&amp;#39;s just an estimate.&lt;/li&gt;
+&lt;li&gt;Look for the &amp;#39;tribe&amp;#39; and seek out what others have done.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+
+&lt;p class=&quot;message&quot;&gt;Launching fast eliminates a whole class of problems.&lt;/p&gt;
+
+&lt;p&gt;This was a very costly lesson. A year of your life (albeit mostly part-time) is a high price to pay. A lot of these problems and issues would have come to light much sooner if I set myself a a tight deadline and prototyped fast. I now realize that prototyping fast is not just for the sake of efficiency, but it also completely eliminates a whole bunch of problems.&lt;/p&gt;
+
+&lt;p&gt;In other words, a lot of the problems I experienced above could have come to light a lot sooner or even completely avoided if I only just prototyped faster and launched sooner.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>What I learned from Seth Godin's Startup School</title>
+   <link href="http://adrianmcli.com/2015/01/19/seth-godin-startup-school/"/>
+   <updated>2015-01-19T12:37:21-08:00</updated>
+   <id>http://adrianmcli.com/2015/01/19/seth-godin-startup-school</id>
+   <content type="html">&lt;p&gt;I recently finished listening to &lt;a href=&quot;http://www.earwolf.com/show/startup-school/&quot;&gt;Seth Godin&amp;#39;s Startup School&lt;/a&gt; podcasts and took notes on the content. Below is the condensed form of what I personally extracted from all 15 episodes.&lt;/p&gt;
+
+&lt;h1&gt;Episode 1: Freelancer or Entrepreneur?&lt;/h1&gt;
+
+&lt;h2&gt;3 things you need to be good at&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Do you know what to do?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Do you understand, from 10,000 feet, what the smartest people in the industry would tell you is the right thing to do?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Are you able to do it? &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Are you capable enough to do the right thing (the thing you need to do)?&lt;/li&gt;
+&lt;li&gt;Organizing, marketing, hiring, etc.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Do you care enough about the project to get hit?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How invested are you into the project?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Lessons from Monopoly&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Every successful business has a monopoly&lt;/strong&gt; - Figure out what it is that you can do, that will cause people to go out of their way to come to you for it. The current entrepreneurial environment is that of a connection economy. Be at the centre of connections, because it is more important than simply selling stuff. If your friends are using a networked product (like Facebook for example), you won&amp;#39;t go to another product even if it may be better. Clearly, it&amp;#39;s not enough to be better, that is the old industrial economy.&lt;/p&gt;
+
+&lt;h2&gt;An Entrepreneur&lt;/h2&gt;
+
+&lt;p&gt;An entrepreneur builds something bigger than himself. When you&amp;#39;re a bootstrapper, you have to start by yourself, but eventually you must ask: How do I make it so the people I hire are better at their tasks than I am?&lt;/p&gt;
+
+&lt;p&gt;People give you money because they think what you are doing is worth more than it costs. So you as the entrepreneur has the obligation to deliver on that value, or else you won&amp;#39;t have any customers. Therefore, marketing is just telling a story about the value that you can provide that can resonate with people enough that they will give you money.&lt;/p&gt;
+
+&lt;p&gt;You must figure out:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How do you tell the story?&lt;/li&gt;
+&lt;li&gt;Who do you tell the story to?&lt;/li&gt;
+&lt;li&gt;How do you create this value?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1&gt;Episode 2: Adjusting the Course&lt;/h1&gt;
+
+&lt;p&gt;The hard part is not defining the path, but it&amp;#39;s sticking to the path. It is a very scary and lonely path, especially because a lot of the people around you won&amp;#39;t be able to talk to you about it.&lt;/p&gt;
+
+&lt;p&gt;Real entrepreneurship: if the geniuses took two weeks off, will the business keep running?&lt;/p&gt;
+
+&lt;p&gt;You can be the smartest person in the world, but if the voice in your head pushes you to avoid opportunities, you won&amp;#39;t get ahead.&lt;/p&gt;
+
+&lt;h2&gt;Questions to ask about your business&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Who is it for?&lt;/strong&gt; - Nothing is for everyone, you need to define your market.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;What do they believe?&lt;/strong&gt; - What are the different world views of the people you are targetting? There will be sub-groups of the groups that you have defined in the first question above. What is the story they are telling themselves?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How do they view the world?&lt;/li&gt;
+&lt;li&gt;How would they view your particular product or service?&lt;/li&gt;
+&lt;li&gt;How would they respond to the way you market?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Have they ever spent cash money to buy something like this before?&lt;/strong&gt; - It is a lot more difficult to sell to people who are not already spending money on a similar product or service. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Does this group or sub-group know about you?&lt;/strong&gt; - There&amp;#39;s a huge gulf between people who ahve heard of you and those who are not aware of you.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Those people who are aware of you, do they trust you?&lt;/strong&gt; - There&amp;#39;s a big gap between those who are simply aware of you and those who trust you enough to buy from you.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;B2B is the same as B2C except that B2B is asking the question: Will this make my boss happy?&lt;/p&gt;
+
+&lt;p&gt;In the connection economy, we have to think about the value your business creates.&lt;/p&gt;
+
+&lt;h2&gt;3 Kinds of Revenue&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cash&lt;/li&gt;
+&lt;li&gt;Attention and trust&lt;/li&gt;
+&lt;li&gt;Referral&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1&gt;Episode 3: Creating Scarcity&lt;/h1&gt;
+
+&lt;p&gt;Would I buy your product or hire your service to solve my problem?&lt;/p&gt;
+
+&lt;p&gt;Difference between manipulation and marketing is that with manipulation, you will regret buying it later. But with marketing, you&amp;#39;ll still be glad you bought it.&lt;/p&gt;
+
+&lt;p&gt;The app market is a sucker&amp;#39;s game:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;biggest haystack, and you&amp;#39;re the tiniest needle&lt;/li&gt;
+&lt;li&gt;most apps don&amp;#39;t lend themselves to network effects and scale&lt;/li&gt;
+&lt;li&gt;it is difficult to sell your app before people try&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Good network effect
+&amp;quot;It works better if my friends used it too&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;What problem is my customer waking up with?&lt;/p&gt;
+
+&lt;p&gt;Your job is not to find more customers for your product, your job is to find more product for your customers. What other tools are available to these customers so that I can use their connections to develop more value.&lt;/p&gt;
+
+&lt;p&gt;What&amp;#39;s the hard part of your business? If there is no hard part, then it&amp;#39;s not going to be a successful business.&lt;/p&gt;
+
+&lt;p&gt;All the time being spent on your logo is just you avoiding doing the hard things.&lt;/p&gt;
+
+&lt;p&gt;As this thing catches on, does it become more valuable or less valuable?&lt;/p&gt;
+
+&lt;p&gt;Tribe targetting. You must DEFINE the tribe. Not just simple demographics, but maybe they&amp;#39;re all reading the same magazine, or are fans of the same type of thing.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1&gt;Episode 4: Appealing to Consumers&lt;/h1&gt;
+
+&lt;p&gt;Are you selling a product that will appeal to:
+- early adopters?
+- the masses?
+- people who won&amp;#39;t buy unless they need it&lt;/p&gt;
+
+&lt;p&gt;You have to cross the chasm from the early adopters to the masses&lt;/p&gt;
+
+&lt;p&gt;In the beginning, look for tribal watering holes where early adopters hang out at. Make them the &amp;quot;insiders&amp;quot;. Make it the perfect product for that small group. Eventually, you might cross the chasm through this community.&lt;/p&gt;
+
+&lt;p&gt;Do not attempt to skip the tribe leaders.&lt;/p&gt;
+
+&lt;p&gt;Can&amp;#39;t decide on an idea? Think about deciding on lunch.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1&gt;Episode 5: Permission and Trust&lt;/h1&gt;
+
+&lt;p&gt;When you start, figure out how you can get from the tribe to the masses.&lt;/p&gt;
+
+&lt;p&gt;Make sure you don&amp;#39;t insist on sticking to a path that is a wrong path. You need to keep experimenting and keep changing things that are not working. Do not fall in love with a vision in your head. The more degrees of freedom you have, the more likely you will have a business that works.&lt;/p&gt;
+
+&lt;p&gt;Blogging/Content marketing: Commit to writing something for your tribe everyday. Not about yourself.&lt;/p&gt;
+
+&lt;p&gt;It will never be perfect and proven, so stop thinking of all that before you start doing.&lt;/p&gt;
+
+&lt;p&gt;Can you build something that will be missed if it was gone.&lt;/p&gt;
+
+&lt;h2&gt;Struggling w/ Costs&lt;/h2&gt;
+
+&lt;p&gt;What assumptions have you made about what you need (that you can actually skip)?
+Can I do it faster?
+Start with the people who value what you can do instead of trying to pretend to be someone else.&lt;/p&gt;
+
+&lt;p&gt;You do NOT need to launch pretty. &lt;/p&gt;
+
+&lt;p&gt;Build trust.&lt;/p&gt;
+
+&lt;p&gt;What are people paying for, and can I dramatically provide something with a higher value for the same price?&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1&gt;Episode 6: Raising Money&lt;/h1&gt;
+
+&lt;p&gt;How to get rid of the work you are using to distract yourself, as opposed to the stuff that is actually difficult and needs to be done.&lt;/p&gt;
+
+&lt;p&gt;What&amp;#39;s scarce, what&amp;#39;s hard.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Providing Unique Value</title>
@@ -135,7 +446,7 @@
 &lt;ul&gt;
 &lt;li&gt;Day 1: Picking an &lt;strong&gt;idea&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Day 2: Coming up with your &lt;strong&gt;MVP&lt;/strong&gt; (what you will launch on Day 7)&lt;/li&gt;
-&lt;li&gt;Day 3: Pickin a &lt;strong&gt;name&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Day 3: Picking a &lt;strong&gt;name&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Day 4: Making a &lt;strong&gt;landing page&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Day 5: Getting in front of people; &lt;strong&gt;Marketing&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Day 6: &lt;strong&gt;Measuring&lt;/strong&gt; success (goal and target setting)&lt;/li&gt;
