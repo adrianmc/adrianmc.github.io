@@ -4,7 +4,7 @@
  <title>adrian</title>
  <link href="http://adrianmcli.com/atom.xml" rel="self"/>
  <link href="http://adrianmcli.com/"/>
- <updated>2015-01-21T08:45:34-08:00</updated>
+ <updated>2015-01-21T16:13:36-08:00</updated>
  <id>http://adrianmcli.com</id>
  <author>
    <name>Adrian Li</name>
@@ -154,173 +154,113 @@
  </entry>
  
  <entry>
-   <title>What I learned from Seth Godin's Startup School</title>
-   <link href="http://adrianmcli.com/2015/01/19/seth-godin-startup-school/"/>
-   <updated>2015-01-19T12:37:21-08:00</updated>
-   <id>http://adrianmcli.com/2015/01/19/seth-godin-startup-school</id>
-   <content type="html">&lt;p&gt;I recently finished listening to &lt;a href=&quot;http://www.earwolf.com/show/startup-school/&quot;&gt;Seth Godin&amp;#39;s Startup School&lt;/a&gt; podcasts and took notes on the content. Below is the condensed form of what I personally extracted from all 15 episodes.&lt;/p&gt;
+   <title>Code Snippets: Part 1</title>
+   <link href="http://adrianmcli.com/2015/01/21/code-snippets-1/"/>
+   <updated>2015-01-21T00:00:00-08:00</updated>
+   <id>http://adrianmcli.com/2015/01/21/code-snippets-1</id>
+   <content type="html">&lt;p&gt;I learn a lot while building things, and I don&amp;#39;t want to forget what I&amp;#39;ve learned. It has happened many times in the past, so this time I have decided to keep a record of what I have learned so that I won&amp;#39;t have to redo any research that I&amp;#39;ve already done. Hopefully, this will be useful to other people as well.&lt;/p&gt;
 
-&lt;h1&gt;Episode 1: Freelancer or Entrepreneur?&lt;/h1&gt;
+&lt;p&gt;The following is a list of things I learned recently about how to make websites with Meteor. A lot of these might be a lot more straight-forward or simple if you&amp;#39;re doing a plain HTML file, but with Meteor there are some things to keep in mind. I&amp;#39;ve also included some non-Meteor specific techniques.&lt;/p&gt;
 
-&lt;h2&gt;3 things you need to be good at&lt;/h2&gt;
+&lt;h1&gt;1. Making a nice full-length header bar based on Foundation&lt;/h1&gt;
 
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Do you know what to do?&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;http://foundation.zurb.com/docs/components/topbar.html&quot;&gt;Top Bar&lt;/a&gt; documentation is great. However, since it relies on some fancy javascript listener, you have to apply the listener every time the template is loaded.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Do you understand, from 10,000 feet, what the smartest people in the industry would tell you is the right thing to do?&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Are you able to do it? &lt;/p&gt;
+&lt;p&gt;Just add the following code inside the corresponding javascript file for your template:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;Template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rendered&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;foundation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;topbar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;reflow&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// apply listener&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;2. Change an element&amp;#39;s style when the user scrolls down&lt;/h1&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Are you capable enough to do the right thing (the thing you need to do)?&lt;/li&gt;
-&lt;li&gt;Organizing, marketing, hiring, etc.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Do you care enough about the project to get hit?&lt;/p&gt;
+&lt;p&gt;When the user scrolls down 50 pixels, the element with the &lt;code&gt;.top-bar&lt;/code&gt; class will have the class &lt;code&gt;.scrolled&lt;/code&gt; added to it. When the page is scrolled to the top, the &lt;code&gt;.scrolled&lt;/code&gt; class will be removed.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;How invested are you into the project?&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Just add the following code inside the corresponding javascript file for your template:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;Template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rendered&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scroll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollTop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.top-bar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;scrolled&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.top-bar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;scrolled&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;3. Autocomplete or Typeahead&lt;/h1&gt;
 
-&lt;h2&gt;Lessons from Monopoly&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Every successful business has a monopoly&lt;/strong&gt; - Figure out what it is that you can do, that will cause people to go out of their way to come to you for it. The current entrepreneurial environment is that of a connection economy. Be at the centre of connections, because it is more important than simply selling stuff. If your friends are using a networked product (like Facebook for example), you won&amp;#39;t go to another product even if it may be better. Clearly, it&amp;#39;s not enough to be better, that is the old industrial economy.&lt;/p&gt;
-
-&lt;h2&gt;An Entrepreneur&lt;/h2&gt;
-
-&lt;p&gt;An entrepreneur builds something bigger than himself. When you&amp;#39;re a bootstrapper, you have to start by yourself, but eventually you must ask: How do I make it so the people I hire are better at their tasks than I am?&lt;/p&gt;
-
-&lt;p&gt;People give you money because they think what you are doing is worth more than it costs. So you as the entrepreneur has the obligation to deliver on that value, or else you won&amp;#39;t have any customers. Therefore, marketing is just telling a story about the value that you can provide that can resonate with people enough that they will give you money.&lt;/p&gt;
-
-&lt;p&gt;You must figure out:&lt;/p&gt;
+&lt;p&gt;This one was really frustrating, but I finally figured out how to do it. I always find it frustrating when people ask about how to do something, and then the creator tells them to just take a look at the example but doesn&amp;#39;t give specific instructions. This is understandable, but what is even more frustrating is when people eventually figure it out but doesn&amp;#39;t explain how they figured it out. Well, the buck stops here.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;How do you tell the story?&lt;/li&gt;
-&lt;li&gt;Who do you tell the story to?&lt;/li&gt;
-&lt;li&gt;How do you create this value?&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;meteor add sergeyt:typeahead&lt;/code&gt; in the terminal to add the typeahead package.&lt;/li&gt;
+&lt;li&gt;Use the following input element in your HTML template:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;form-control typeahead&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;team&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;NBA teams&amp;quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;autocomplete=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;off&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;spellcheck=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;off&amp;quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;data-source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;nba&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Put the following code inside the corresponding javascript file for your template:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;Template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;demo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;helpers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;nba&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Nba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;Template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;demo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rendered&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;Meteor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;typeahead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.typeahead&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The data-source in the HTML specifies &lt;code&gt;nba&lt;/code&gt;. So the typeahead.js library will make note of that and run the &lt;code&gt;nba&lt;/code&gt; function in the template helper. However, for that to work we have to let the typeahead.js library know to listen to the appropriate classes. This is the &lt;a href=&quot;https://atmospherejs.com/sergeyt/typeahead&quot;&gt;link&lt;/a&gt; to the package.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Also, don&amp;#39;t forget to style the dropdown. Here&amp;#39;s mine for reference:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr&gt;
-
-&lt;h1&gt;Episode 2: Adjusting the Course&lt;/h1&gt;
-
-&lt;p&gt;The hard part is not defining the path, but it&amp;#39;s sticking to the path. It is a very scary and lonely path, especially because a lot of the people around you won&amp;#39;t be able to talk to you about it.&lt;/p&gt;
-
-&lt;p&gt;Real entrepreneurship: if the geniuses took two weeks off, will the business keep running?&lt;/p&gt;
-
-&lt;p&gt;You can be the smartest person in the world, but if the voice in your head pushes you to avoid opportunities, you won&amp;#39;t get ahead.&lt;/p&gt;
-
-&lt;h2&gt;Questions to ask about your business&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Who is it for?&lt;/strong&gt; - Nothing is for everyone, you need to define your market.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;What do they believe?&lt;/strong&gt; - What are the different world views of the people you are targetting? There will be sub-groups of the groups that you have defined in the first question above. What is the story they are telling themselves?&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;How do they view the world?&lt;/li&gt;
-&lt;li&gt;How would they view your particular product or service?&lt;/li&gt;
-&lt;li&gt;How would they respond to the way you market?&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Have they ever spent cash money to buy something like this before?&lt;/strong&gt; - It is a lot more difficult to sell to people who are not already spending money on a similar product or service. &lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Does this group or sub-group know about you?&lt;/strong&gt; - There&amp;#39;s a huge gulf between people who ahve heard of you and those who are not aware of you.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Those people who are aware of you, do they trust you?&lt;/strong&gt; - There&amp;#39;s a big gap between those who are simply aware of you and those who trust you enough to buy from you.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;B2B is the same as B2C except that B2B is asking the question: Will this make my boss happy?&lt;/p&gt;
-
-&lt;p&gt;In the connection economy, we have to think about the value your business creates.&lt;/p&gt;
-
-&lt;h2&gt;3 Kinds of Revenue&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Cash&lt;/li&gt;
-&lt;li&gt;Attention and trust&lt;/li&gt;
-&lt;li&gt;Referral&lt;/li&gt;
-&lt;/ul&gt;
+&lt;script src=&quot;https://gist.github.com/fb007a065cd5c0bef31d.js&quot;&gt; &lt;/script&gt;
 
 &lt;hr&gt;
 
-&lt;h1&gt;Episode 3: Creating Scarcity&lt;/h1&gt;
+&lt;p&gt;The following techniques are not Meteor specific, but they are valuable lessons I learned which should be useful in the future.&lt;/p&gt;
 
-&lt;p&gt;Would I buy your product or hire your service to solve my problem?&lt;/p&gt;
+&lt;h1&gt;4. Full Screen Background Images&lt;/h1&gt;
 
-&lt;p&gt;Difference between manipulation and marketing is that with manipulation, you will regret buying it later. But with marketing, you&amp;#39;ll still be glad you bought it.&lt;/p&gt;
+&lt;p&gt;I learned this from this &lt;a href=&quot;http://css-tricks.com/perfect-full-page-background-image/&quot;&gt;blog post&lt;/a&gt;. Making the pretty full screen backgrounds that are popular these days is easy thanks to HTML5, all we have to do is use the following CSS:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(images/bg.jpg)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;no-repeat&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;center&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;center&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fixed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;webkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;4. Full Screen Sections&lt;/h1&gt;
 
-&lt;p&gt;The app market is a sucker&amp;#39;s game:&lt;/p&gt;
+&lt;p&gt;Another simple CSS trick. It&amp;#39;s not really even a trick, but it&amp;#39;s a trick to me because I didn&amp;#39;t know about it before. This &lt;a href=&quot;https://medium.com/@ckor/make-full-screen-sections-with-1-line-of-css-b82227c75cbd&quot;&gt;blog post&lt;/a&gt; made it very simple to create divs that are 100% of the viewport height.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.section&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;5. Sticky Footer&lt;/h1&gt;
 
-&lt;ul&gt;
-&lt;li&gt;biggest haystack, and you&amp;#39;re the tiniest needle&lt;/li&gt;
-&lt;li&gt;most apps don&amp;#39;t lend themselves to network effects and scale&lt;/li&gt;
-&lt;li&gt;it is difficult to sell your app before people try&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Good network effect
-&amp;quot;It works better if my friends used it too&amp;quot;&lt;/p&gt;
-
-&lt;p&gt;What problem is my customer waking up with?&lt;/p&gt;
-
-&lt;p&gt;Your job is not to find more customers for your product, your job is to find more product for your customers. What other tools are available to these customers so that I can use their connections to develop more value.&lt;/p&gt;
-
-&lt;p&gt;What&amp;#39;s the hard part of your business? If there is no hard part, then it&amp;#39;s not going to be a successful business.&lt;/p&gt;
-
-&lt;p&gt;All the time being spent on your logo is just you avoiding doing the hard things.&lt;/p&gt;
-
-&lt;p&gt;As this thing catches on, does it become more valuable or less valuable?&lt;/p&gt;
-
-&lt;p&gt;Tribe targetting. You must DEFINE the tribe. Not just simple demographics, but maybe they&amp;#39;re all reading the same magazine, or are fans of the same type of thing.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1&gt;Episode 4: Appealing to Consumers&lt;/h1&gt;
-
-&lt;p&gt;Are you selling a product that will appeal to:
-- early adopters?
-- the masses?
-- people who won&amp;#39;t buy unless they need it&lt;/p&gt;
-
-&lt;p&gt;You have to cross the chasm from the early adopters to the masses&lt;/p&gt;
-
-&lt;p&gt;In the beginning, look for tribal watering holes where early adopters hang out at. Make them the &amp;quot;insiders&amp;quot;. Make it the perfect product for that small group. Eventually, you might cross the chasm through this community.&lt;/p&gt;
-
-&lt;p&gt;Do not attempt to skip the tribe leaders.&lt;/p&gt;
-
-&lt;p&gt;Can&amp;#39;t decide on an idea? Think about deciding on lunch.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1&gt;Episode 5: Permission and Trust&lt;/h1&gt;
-
-&lt;p&gt;When you start, figure out how you can get from the tribe to the masses.&lt;/p&gt;
-
-&lt;p&gt;Make sure you don&amp;#39;t insist on sticking to a path that is a wrong path. You need to keep experimenting and keep changing things that are not working. Do not fall in love with a vision in your head. The more degrees of freedom you have, the more likely you will have a business that works.&lt;/p&gt;
-
-&lt;p&gt;Blogging/Content marketing: Commit to writing something for your tribe everyday. Not about yourself.&lt;/p&gt;
-
-&lt;p&gt;It will never be perfect and proven, so stop thinking of all that before you start doing.&lt;/p&gt;
-
-&lt;p&gt;Can you build something that will be missed if it was gone.&lt;/p&gt;
-
-&lt;h2&gt;Struggling w/ Costs&lt;/h2&gt;
-
-&lt;p&gt;What assumptions have you made about what you need (that you can actually skip)?
-Can I do it faster?
-Start with the people who value what you can do instead of trying to pretend to be someone else.&lt;/p&gt;
-
-&lt;p&gt;You do NOT need to launch pretty. &lt;/p&gt;
-
-&lt;p&gt;Build trust.&lt;/p&gt;
-
-&lt;p&gt;What are people paying for, and can I dramatically provide something with a higher value for the same price?&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1&gt;Episode 6: Raising Money&lt;/h1&gt;
-
-&lt;p&gt;How to get rid of the work you are using to distract yourself, as opposed to the stuff that is actually difficult and needs to be done.&lt;/p&gt;
-
-&lt;p&gt;What&amp;#39;s scarce, what&amp;#39;s hard.&lt;/p&gt;
-</content>
+&lt;p&gt;&lt;a href=&quot;http://ryanfait.com/sticky-footer/&quot;&gt;Ryan Fait&lt;/a&gt; came up with a CSS sticky footer that &amp;quot;just works&amp;quot;. I have reproduced it here for record&amp;#39;s sake:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;min-height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* This line and the next line are not necessary unless you need IE6 support */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-155px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* the bottom margin is the negative value of the footer&amp;#39;s height */&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.footer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.push&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;155px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* .push must be the same height as .footer */&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
  </entry>
  
  <entry>

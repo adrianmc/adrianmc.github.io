@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Code Snippets: Part 1 &middot; adrian
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface|Special+Elite">
+  
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-fab">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          adrian
+        </a>
+      </h1>
+      <p class="lead">sometimes the most powerful drive comes from a quiet desperation</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive/">Archive</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/adrianmc">GitHub</a>
+      <span class="sidebar-nav-item">v1.0</span>
+    </nav>
+
+    <p>&copy; 2015. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Code Snippets: Part 1</h1>
+  <span class="post-date">21 Jan 2015</span>
+  <p>I learn a lot while building things, and I don&#39;t want to forget what I&#39;ve learned. It has happened many times in the past, so this time I have decided to keep a record of what I have learned so that I won&#39;t have to redo any research that I&#39;ve already done. Hopefully, this will be useful to other people as well.</p>
+
+<p>The following is a list of things I learned recently about how to make websites with Meteor. A lot of these might be a lot more straight-forward or simple if you&#39;re doing a plain HTML file, but with Meteor there are some things to keep in mind. I&#39;ve also included some non-Meteor specific techniques.</p>
+
+<h1>1. Making a nice full-length header bar based on Foundation</h1>
+
+<p>The <a href="http://foundation.zurb.com/docs/components/topbar.html">Top Bar</a> documentation is great. However, since it relies on some fancy javascript listener, you have to apply the listener every time the template is loaded.</p>
+
+<p>Just add the following code inside the corresponding javascript file for your template:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Template</span><span class="p">.</span><span class="nx">layout</span><span class="p">.</span><span class="nx">rendered</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">foundation</span><span class="p">(</span><span class="s1">&#39;topbar&#39;</span><span class="p">,</span> <span class="s1">&#39;reflow&#39;</span><span class="p">);</span>   <span class="c1">// apply listener</span>
+<span class="p">};</span>
+</code></pre></div>
+<h1>2. Change an element&#39;s style when the user scrolls down</h1>
+
+<p>When the user scrolls down 50 pixels, the element with the <code>.top-bar</code> class will have the class <code>.scrolled</code> added to it. When the page is scrolled to the top, the <code>.scrolled</code> class will be removed.</p>
+
+<p>Just add the following code inside the corresponding javascript file for your template:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Template</span><span class="p">.</span><span class="nx">layout</span><span class="p">.</span><span class="nx">rendered</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scroll</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.top-bar&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;scrolled&#39;</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.top-bar&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;scrolled&#39;</span><span class="p">);</span>
+            <span class="p">};</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1>3. Autocomplete or Typeahead</h1>
+
+<p>This one was really frustrating, but I finally figured out how to do it. I always find it frustrating when people ask about how to do something, and then the creator tells them to just take a look at the example but doesn&#39;t give specific instructions. This is understandable, but what is even more frustrating is when people eventually figure it out but doesn&#39;t explain how they figured it out. Well, the buck stops here.</p>
+
+<ul>
+<li>Run <code>meteor add sergeyt:typeahead</code> in the terminal to add the typeahead package.</li>
+<li>Use the following input element in your HTML template:</li>
+</ul>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control typeahead&quot;</span> <span class="na">name=</span><span class="s">&quot;team&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span>
+       <span class="na">placeholder=</span><span class="s">&quot;NBA teams&quot;</span>
+       <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span> <span class="na">spellcheck=</span><span class="s">&quot;off&quot;</span>
+       <span class="na">data-source=</span><span class="s">&quot;nba&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<ul>
+<li>Put the following code inside the corresponding javascript file for your template:</li>
+</ul>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Template</span><span class="p">.</span><span class="nx">demo</span><span class="p">.</span><span class="nx">helpers</span><span class="p">({</span>
+  <span class="nx">nba</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Nba</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">fetch</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">it</span><span class="p">){</span> <span class="k">return</span> <span class="nx">it</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">Template</span><span class="p">.</span><span class="nx">demo</span><span class="p">.</span><span class="nx">rendered</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Meteor</span><span class="p">.</span><span class="nx">typeahead</span><span class="p">.</span><span class="nx">inject</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.typeahead&#39;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The data-source in the HTML specifies <code>nba</code>. So the typeahead.js library will make note of that and run the <code>nba</code> function in the template helper. However, for that to work we have to let the typeahead.js library know to listen to the appropriate classes. This is the <a href="https://atmospherejs.com/sergeyt/typeahead">link</a> to the package.</p>
+
+<ul>
+<li>Also, don&#39;t forget to style the dropdown. Here&#39;s mine for reference:</li>
+</ul>
+
+<script src="https://gist.github.com/fb007a065cd5c0bef31d.js"> </script>
+
+<hr>
+
+<p>The following techniques are not Meteor specific, but they are valuable lessons I learned which should be useful in the future.</p>
+
+<h1>4. Full Screen Background Images</h1>
+
+<p>I learned this from this <a href="http://css-tricks.com/perfect-full-page-background-image/">blog post</a>. Making the pretty full screen backgrounds that are popular these days is easy thanks to HTML5, all we have to do is use the following CSS:</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">html</span> <span class="p">{</span> 
+  <span class="k">background</span><span class="o">:</span> <span class="sx">url(images/bg.jpg)</span> <span class="k">no-repeat</span> <span class="k">center</span> <span class="k">center</span> <span class="k">fixed</span><span class="p">;</span> 
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1>4. Full Screen Sections</h1>
+
+<p>Another simple CSS trick. It&#39;s not really even a trick, but it&#39;s a trick to me because I didn&#39;t know about it before. This <a href="https://medium.com/@ckor/make-full-screen-sections-with-1-line-of-css-b82227c75cbd">blog post</a> made it very simple to create divs that are 100% of the viewport height.</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.section</span> <span class="p">{</span> <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="n">vh</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>
+<h1>5. Sticky Footer</h1>
+
+<p><a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a> came up with a CSS sticky footer that &quot;just works&quot;. I have reproduced it here for record&#39;s sake:</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">*</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+    <span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.wrapper</span> <span class="p">{</span>
+    <span class="k">min-height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="k">height</span><span class="o">:</span> <span class="k">auto</span> <span class="cp">!important</span><span class="p">;</span> <span class="c">/* This line and the next line are not necessary unless you need IE6 support */</span>
+    <span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span> <span class="m">-155px</span><span class="p">;</span> <span class="c">/* the bottom margin is the negative value of the footer&#39;s height */</span>
+<span class="p">}</span>
+<span class="nc">.footer</span><span class="o">,</span> <span class="nc">.push</span> <span class="p">{</span>
+    <span class="k">height</span><span class="o">:</span> <span class="m">155px</span><span class="p">;</span> <span class="c">/* .push must be the same height as .footer */</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2015/01/21/my-first-app-failure/">
+            7 lessons from my first app failure
+            <small>21 Jan 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/01/16/providing-unique-value/">
+            Providing Unique Value
+            <small>16 Jan 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/01/15/the-7-day-startup/">
+            Book Summary: The 7 Day Startup
+            <small>15 Jan 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+
+  </body>
+</html>
