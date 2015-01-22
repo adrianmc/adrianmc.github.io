@@ -145,3 +145,5 @@ I define my result rituals
 BEWARE OF THIS ------> lack of momentum BEWARE
 
 - REACH OUT to people at a higher level
+
+I should consider buying the book 6 months to 6 figures

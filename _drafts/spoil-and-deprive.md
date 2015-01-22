@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Spoil and Deprive"
+title: "Harnessing the Power of Desperation"
 ---
 
 Only those who have their backs against the wall can truly find out what they really want and what they will sacrifice to get there. This is the compliment to my spoil and deprive idea. We have to feel desperate to succeed, or else we never will. How do you make yourself desperate?
