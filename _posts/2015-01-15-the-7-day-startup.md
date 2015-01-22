@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Book Summary: The 7 Day Startup"
+comments: True
 ---
 
 I first heard about this book from this [Reddit post](http://www.reddit.com/r/startups/comments/2rz8aj/here_is_how_i_built_my_first_mvp_in_less_than_a/). After Googling the book title, I found out that the theme of the book was to teach you to finally stop being a wantrepreneur and start executing on something. The story of the author, Dan Norris, is that he spent a year developing a startup which didn't really go anywhere, and was actually going to have to look for a job because he was running out of money. However, with just a couple weeks left, he cranked out a wildly successful business by launching in 7 days. I thought this was very intriguing, so I bought it and gave it a read. Below are the major ideas I've been able to extract from this book.

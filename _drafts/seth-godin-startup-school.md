@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "What I learned from Seth Godin's Startup School"
+comments: True
 ---
 
 I recently finished listening to [Seth Godin's Startup School](http://www.earwolf.com/show/startup-school/) podcasts and took notes on the content. Below is the condensed form of what I personally extracted from all 15 episodes.

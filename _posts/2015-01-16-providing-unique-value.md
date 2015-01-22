@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Providing Unique Value
+comments: True
 ---
 
 A while back, I found [this video](http://moz.com/blog/how-to-provide-unique-value-in-your-content-whiteboard-friday) from [DigitalPoint.com](http://moz.com/blog/how-to-provide-unique-value-in-your-content-whiteboard-friday), an industry news site about business software. The number one rule of business (as I have recognized) is to create value. But how do you know if you're creating something valuable? Well this video seemed to explain just that. The video focuses on SEO, but the value of the content here is much more than that.

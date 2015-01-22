@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Code Snippets: Part 1"
+comments: True
 ---
 
 I learn a lot while building things, and I don't want to forget what I've learned. It has happened many times in the past, so this time I have decided to keep a record of what I have learned so that I won't have to redo any research that I've already done. Hopefully, this will be useful to other people as well.

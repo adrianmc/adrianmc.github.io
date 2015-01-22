@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "7 lessons from my first app failure"
+comments: True
 ---
 
 In the summer of 2013, I had the idea to make a mobile app, so I called up one of my friends and got to work. Over a year later, we launched [Texty Time](https://play.google.com/store/apps/details?id=com.aheadstudios.talkalytics). The project took so long and not too many people used it, so I decided I never wanted to touch or even think about it again. Recently, I was reading [@levelsio](https://twitter.com/levelsio)'s blog on how he planned to start [12 startups in 12 months](https://levels.io/12-startups-12-months/). For a lot of these projects, he had a project debrief page where he talks about what he learned from each of them. Suddenly, I realized that I myself have attemped (and failed) at making something akin to a "startup" as well (albeit very very humble and basic). This is the story of what I learned.
