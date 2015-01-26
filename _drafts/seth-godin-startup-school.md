@@ -150,3 +150,10 @@ What are people paying for, and can I dramatically provide something with a high
 How to get rid of the work you are using to distract yourself, as opposed to the stuff that is actually difficult and needs to be done.
 
 What's scarce, what's hard.
+
+----
+
+# Episode 7
+
+You just need the passionate few. Don't think macro, find the people who are willing to pay.
+

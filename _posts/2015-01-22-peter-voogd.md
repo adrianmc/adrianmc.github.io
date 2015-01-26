@@ -92,6 +92,7 @@ I would say, "How often do you review your weeks?"
 
 You can't expect to improve if you're not learning from your mistakes and investing them back into your future. You have to be constantly **pausing and reflecting**. That is why it's important to schedule at least an hour each week for a weekly evaluation.
 
+<a name="weekly_evaluation"></a>
 ### Weekly Evaluation
 
 > Everything I want to accomplish for this week *must* be on paper
@@ -158,7 +159,7 @@ In doing so, you should also **imagine yourself getting ready for bed that night
 
 As you do this, make sure to minimize distractions and interruptions. Ask yourself at the beginning and end of each day, "What is distracting me the most?" Create a plan to take care of these distractions and interruptions, or else they will bleed into your productivity.
 
-<p class="message"><i class="fa fa-quote-left fa-2x pull-left fa-border"></i>What am I committed to making happen today no matter what?</p>
+<p class="message"><i class="fa fa-quote-left pull-left fa-border"></i>What am I committed to making happen today no matter what?</p>
 
 ### Unshakable Mindset
 
