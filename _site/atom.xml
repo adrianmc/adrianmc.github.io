@@ -4,13 +4,63 @@
  <title>adrian</title>
  <link href="http://adrianmcli.com/atom.xml" rel="self"/>
  <link href="http://adrianmcli.com/"/>
- <updated>2015-01-26T11:15:42-08:00</updated>
+ <updated>2015-01-28T19:00:26-08:00</updated>
  <id>http://adrianmcli.com</id>
  <author>
    <name>Adrian Li</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Day 28 Evaluation</title>
+   <link href="http://adrianmcli.com/2015/01/28/28-day-evaluation/"/>
+   <updated>2015-01-28T00:00:00-08:00</updated>
+   <id>http://adrianmcli.com/2015/01/28/28-day-evaluation</id>
+   <content type="html">&lt;p&gt;This is the first of my &lt;a href=&quot;/2015/01/14/the-beginning/&quot;&gt;28-day evaluations&lt;/a&gt;. In the last 28 days I’ve surprised myself with how much I had gotten done. But it wasn’t all accomplishments either, there were a lot of things that I have learned that I wouldn’t have learned if I didn’t have to struggle through them.&lt;/p&gt;
+
+&lt;h1&gt;In the last 28 days I...&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;For the second half of the 28 days, woke up before 5am in the morning and exercised.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This did not start off easy, but I did have prior experience to help me with it. Over the previous summer, I spent some 30 odd days doing the same thing and I felt great. I did it again this time as well, but I didn&amp;#39;t get as much sleep as I would&amp;#39;ve liked. In any case, it was a very worthwhile experience for numerous reasons.&lt;/p&gt;
+
+&lt;p&gt;When you get up in the morning as early as I do, you feel euphoric as if you are going to be the super hero to win the day. Coupled with what I&amp;#39;ve learned about motivation and self-improvement, I notice that I am much more able to focus my day when I &lt;strong&gt;start the day off strong&lt;/strong&gt;. That means waking up with the &lt;em&gt;intention&lt;/em&gt; to have a good day. It means waking up, knowing that in about 18 hours or so, I&amp;#39;ll have to look back and evaluate what I accomplished in those 18 hours.&lt;/p&gt;
+
+&lt;p&gt;It has also been just great for fat loss and energy in general. I feel healthier during pretty much every part of my day. The only thing I still have to work on is my nutrition. Getting to bed is also quite difficult because there&amp;#39;s always something new and exciting on the internet. I still need to work more on being disciplined so I can sleep early. If I am not disciplined with my sleeping time, then eventually I won&amp;#39;t be disciplined with my morning time either. And inevitably, my day, my week, my life will also lose discipline. Discipline is a slippery slope, and any step in the wrong direction can send you off in the wrong direction.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Built a blog on Jekyll, hosted on GitHub Pages, and blogged 7 articles.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This was a very interesting experience, mostly for personal improvement and also a better understanding of technology as well. Setting up Jekyll was quite fun and interesting. The fact that it&amp;#39;s hosted freely on GitHub Pages also feels really good. I&amp;#39;ve found that blogging about various topics allow me to consolidate my thoughts a lot better.&lt;/p&gt;
+
+&lt;p&gt;Have you ever picked up a book, and had that strange feeling that you&amp;#39;ve read it before? Then later, you realize that you &lt;em&gt;did&lt;/em&gt; read it before, but you simply forgot all about its lessons and ideas. Well this happens to the best of us. We end up consuming more and more information because it feels good and it feels very productive and motivational. However, it&amp;#39;s been said that it&amp;#39;s better to master 3 books than read 50. And I feel this is very true, not only for books but for ideas in general too. I believe we should all do some blogging (or in the olden days, it was called journal writing). It really allows us to step back, think about ideas and concepts, view it in context and then connect it with our real world experiences.&lt;/p&gt;
+
+&lt;p&gt;This works not only for the more abstract personal development topics, but also for programming. I started a code-snippet blog post series where I attempt to explain how I solved difficult problems. Mind you, these problems were difficult to me, but not necessarily to veteran programmers. It allows me to have a nice repository of how to do certain things which may not seem so obvious at first.&lt;/p&gt;
+
+&lt;p&gt;Beyond this, I also try to blog about twice a week so that I can get some content out there. It&amp;#39;s pretty important to &lt;a href=&quot;http://blog.codinghorror.com/yes-but-what-have-you-done/&quot;&gt;always be shipping&lt;/a&gt;. And I believe that the more we write and reflect, the better we will also get in writing and reflecting. We can&amp;#39;t just simply aim to be better at something, we have to practice it and beat that skill in with repetition. We have to &lt;a href=&quot;http://www.quora.com/Whats-the-best-way-to-learn-something/answer/Eric-Scott-13?srid=XFo4&amp;amp;share=1&quot;&gt;make a lot of pots&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Designed, built, and launched an MVP/landing page in about 7 days on Meteor, a technology where I had zero experience before.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;What I have up on &lt;a href=&quot;http://b4yougo.net&quot;&gt;b4YouGo.net&lt;/a&gt; probably took about 5 to 7 days of work. I know that it&amp;#39;s rather simple and it more or less appears to be just a static site. However, it is a full-fledged (although basic) Meteor application deployed with a handful of packages that I learned how to use.&lt;/p&gt;
+
+&lt;p&gt;I learned a &lt;em&gt;whole lot&lt;/em&gt; of things about making websites throughout this process. A lot of this is documented in my code-snippets posts. It&amp;#39;s always the little things that you never think of that will frustrate you the most. I guess that&amp;#39;s a bit of a tautology because if they weren&amp;#39;t small little things, you probably would&amp;#39;ve anticipated their difficulty and you wouldn&amp;#39;t be so frustrated. In any case, it was nice to be able to begin building experience in dealing with them. With every little problem I solve, I feel like I am adding another tool to my belt, and that&amp;#39;s always a great feeling.&lt;/p&gt;
+
+&lt;p&gt;But the biggest benefit of having built a site in 7 days is that I showed myself I could do it. Of course, before I started it sounded impossible. Then when I got to work on it, it started to seem possible. About 3 days out from the deadline I set myself, it simply just felt inevitable. And so it is with a lot of things in life. We can&amp;#39;t let our fears of failure stop us in our tracks. You&amp;#39;d be surprised how far you could go if only you set tight &amp;quot;un-realistic&amp;quot; deadlines for yourself.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m not quite sure what the next thing I&amp;#39;ll be building is, but I&amp;#39;m certain that it will definitely be more impressive and valuable than the site I built in the last week. I still have a lot to learn, but I should never fail to remember that only 7 days ago, I also thought I had an immeasurable amount of material to learn. Yet I completed what I wanted to do on schedule, and reaped much from the experience.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;I limited my time on things not catalytic to my goals and immersed myself in entrepreneurial content.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Throughout this entire process, I found it was necessary for me to cut down on spending time on &amp;quot;junk&amp;quot; content and activities. There are a lot of things where we convince ourselves are good or even productive for us, but you really have to consider them in the context of an opportunity cost to do even more productive things. For example, it may be that reading about tech news is important and productive because you need to keep abreast of what is going on in the sector. However, maybe instead of spending several hours reading about all the little things, you can focus 30 minutes or so on it and spend the rest of your time on things that can leverage your progress towards your goals much faster.&lt;/p&gt;
+
+&lt;p&gt;You can&amp;#39;t always just simply categorize things as &amp;quot;productive&amp;quot; or &amp;quot;non-productive&amp;quot;, because what you end up with is a bunch of aerobatic rationalizations we give ourselves to indulge in junk tasks or activies. We simply can&amp;#39;t trust ourselves. We need to constantly be evaluating what we&amp;#39;re doing and questioning whether or not we can apply that time elsewhere to create a much higher return on interest. For me, that was unsubscribing to a lot of subreddits, stopping myself from reading certain blogs, and refraining from watching too many movies.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re doing something that&amp;#39;s not directly catalyzing or helping you get closer to your goals, then you have to ask youself whether it&amp;#39;s something worth giving up your dream for. There is a sense of urgency, and if there isn&amp;#39;t then you have a problem. You need to know that you can&amp;#39;t simply cruise along.&lt;/p&gt;
+
+&lt;p&gt;A lot of people look at successful people and think, &amp;quot;wow they have it so easy now, I wish I could be in their position!&amp;quot; But it&amp;#39;s not like that at all, the pain never gets easier, you simply get stronger. When a world-class weightlfiter lifts weights, the weights don&amp;#39;t actually &lt;em&gt;feel&lt;/em&gt; lighter. Not at all, they simply feel that they &lt;em&gt;themselves&lt;/em&gt; are stronger and thus able to lift the weight. If that wasn&amp;#39;t the case, then world-cass weightlifters would have trouble lifting very light things.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In any case, it&amp;#39;s time to sign off. This has been a very good re-cap and truly cathartic. This will be a good start to the rest of my life. Now what will you do with yours?&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Lessons from Peter Voogd</title>
