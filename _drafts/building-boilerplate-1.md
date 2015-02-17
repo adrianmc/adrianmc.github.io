@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "Walkthrough Building a Boilerplate Project - Part 1"
 comments: True
 tags: walkthrough

@@ -4,13 +4,259 @@
  <title>adrian</title>
  <link href="http://adrianmcli.com/atom.xml" rel="self"/>
  <link href="http://adrianmcli.com/"/>
- <updated>2015-01-29T09:33:49-08:00</updated>
+ <updated>2015-02-17T13:43:25-08:00</updated>
  <id>http://adrianmcli.com</id>
  <author>
    <name>Adrian Li</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Entrepreneurs Should Not do Mobile App Development</title>
+   <link href="http://adrianmcli.com/2015/02/17/entrepreneurs-should-not-do-mobile/"/>
+   <updated>2015-02-17T00:00:00-08:00</updated>
+   <id>http://adrianmcli.com/2015/02/17/entrepreneurs-should-not-do-mobile</id>
+   <content type="html">&lt;p&gt;A lot of people want to go into mobile development because they want to make money. But that&amp;#39;s not the right way to look at it. You should be thinking about where you can get up to speed the fastest such that you can offer something valuable to the wider market. As a rule, I think entrepreneurs should not try to dive into the mobile app space unless...&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;They are experts at mobile app development already, or;&lt;/li&gt;
+&lt;li&gt;They have the money to hire people who are such experts.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1&gt;The Why&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Mobile is saturated&lt;/strong&gt; - Everyone thinks they&amp;#39;ll make millions there which makes it harder for people to do so. It&amp;#39;s also a very noisy space, and you&amp;#39;ll keep reading different things from different people talking about how to do different things differently.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile will never be bigger than web dev&lt;/strong&gt; - By definition the web will always bigger than mobile, because mobile app development is largely a subset of what the web can offer.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile apps can be emulated by hybrid apps&lt;/strong&gt; - Platforms like Xamarin, Titanium, and PhoneGap/Cordova all allow you to make very rich apps using web development techniques. But you might say: hybrid apps are slow and will never be as fast as native apps. This might be true, but unless your business idea is something specifically for the mobile platform, there&amp;#39;s no point in giving yourself such a hard time (read on).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile lacks control&lt;/strong&gt; - There are too many platforms and changing APIs. It&amp;#39;s like trying to hit a moving target, it&amp;#39;s just not going to work out very well. Google or Apple can change the API on you, and the next thing you know you&amp;#39;re scrambling to keep your app relevant.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;More Reasons&lt;/h2&gt;
+
+&lt;p&gt;People say that the app space is growing so fast and that it&amp;#39;s huge. But there will always be large markets, why would you confine yourself to a small one when there&amp;#39;s a bigger one that&amp;#39;s still growing? You cannot have mobile without the web.&lt;/p&gt;
+
+&lt;p&gt;The goal of the entrepreneur should not be learning Android or iOS development. It is like trying to get across a river by walking in the mud when there&amp;#39;s a bridge already built. The goal of the entrepreneur as it pertains to mobile apps is that he should build and grow his business to the point where he would be able to spend money to hire some developer who&amp;#39;s had to live his life in Android/iOS-land because he chose overspecialization instead of trying to build a business. The entrepreneur would then instruct him to take care of building out the Android/iOS arm of his business where there is a specific market need for it.&lt;/p&gt;
+
+&lt;p&gt;Doing Android/iOS is like riding an elephant when there&amp;#39;s a car on the ground beside you. But hey, at least you got to say you rode on an elephant! And I sincerely think there is value in that. Just don&amp;#39;t do it forever.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;But isn&amp;#39;t the web saturated too?&lt;/h2&gt;
+
+&lt;p&gt;Not nearly as much as the mobile market, this is because the web is an open platform and you can always invent your way into new pastures. There&amp;#39;s a whole slew of new protocols that are still undeveloped. You can go develop that, and BAM you have a new slice of the web.&lt;/p&gt;
+
+&lt;p&gt;With mobile, you&amp;#39;re locked-in to the platform&amp;#39;s API and if Google or Apple tells you to jump, you have to say &amp;quot;how high?&amp;quot;&lt;/p&gt;
+
+&lt;h2&gt;But what does saturated really mean?&lt;/h2&gt;
+
+&lt;p class=&quot;message&quot;&gt;&lt;strong&gt;Saturated&lt;/strong&gt; - Extreme over-population of a market, causing the inability to sufficiently and expediently define your niche and thus the ability to market your value proposition.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s say you wanted to make an app that allows you to keep track of food expiry. Immediately, you get lumped into the group of &amp;quot;food-related apps&amp;quot; and you&amp;#39;re competing against them even if you are doing something different. Everything is in buckets, because the consumer looks at apps all in the same way.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s also not very agile. Say you wanted to clarify how you&amp;#39;re different from these other apps that are food-related. Well, on the web there are a million different ways to do that. With an app, you&amp;#39;re either adding features and changing up your description or maybe simply submitting your app to different blogs.&lt;/p&gt;
+
+&lt;h2&gt;Well okay, but how can I differentiate on the web as opposed to in the mobile app space?&lt;/h2&gt;
+
+&lt;p&gt;You can change the page, add an API, you can scrape, you can create bots to do stuff for you. You can link to your own blog. You can provide an e-commerce service or even start an affiliate program of your own for others. The possibilities are endless.&lt;/p&gt;
+
+&lt;h2&gt;Locked-in API&lt;/h2&gt;
+
+&lt;p&gt;With little exception, on a mobile app platform there&amp;#39;s usually only one or two specific ways to implement something. For example, when I was working on Android, I found out that there was only one real way to implement a list. Only one way to make a certain type of animation. Only one way to do this and that and everything else. A closed API really sucks, and because it is so close to the hardware, it&amp;#39;s very low level and the code is especially verbose (I&amp;#39;m look at you Android/Java). This is less of a problem with Swift, but it&amp;#39;s still a problem.&lt;/p&gt;
+
+&lt;p&gt;At the end of the day, it&amp;#39;s like playing with LEGO instead of cutting and sawing your own pieces of wood and metal to build something that you want.&lt;/p&gt;
+
+&lt;h2&gt;But there are libraries on Android/iOS that lets you do a lot of those things easily!&lt;/h2&gt;
+
+&lt;p&gt;Yes but they&amp;#39;re still doing it through the traditional way. They&amp;#39;re still doing it through the traditional API, it&amp;#39;s just abstracted to make it easier for you. Arguably, you can say that about the web too, but it&amp;#39;s at a much much higher level.&lt;/p&gt;
+
+&lt;p&gt;To take making a list as an example, I can build something to create a list based off of pure CSS. Or I can do another one that is produced from SVG definitions. Or I can make one in OpenGL. Or I can do all sorts of wacky stuff. etc. etc. And depending on how you want to tweak things, they might all end up performing well on peoples computers, because we have control over how the browser itself interacts with my site.&lt;/p&gt;
+
+&lt;h2&gt;Final Note&lt;/h2&gt;
+
+&lt;p&gt;The craziest sh*t is possible on the web, and it&amp;#39;s often a lot easier and faster too. Don&amp;#39;t be fooled by all the rockstars making millions off of apps, they are the outliars. Mobile apps are just a lake while the web is an ocean.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Code Snippets: Part 3</title>
+   <link href="http://adrianmcli.com/2015/02/16/code-snippets-3/"/>
+   <updated>2015-02-16T00:00:00-08:00</updated>
+   <id>http://adrianmcli.com/2015/02/16/code-snippets-3</id>
+   <content type="html">&lt;p&gt;Now that &lt;a href=&quot;http://b4yougo.net&quot;&gt;b4YouGo&lt;/a&gt; has been launched, it&amp;#39;s time for my next project. As a result of this new endeavour, I&amp;#39;ll be learning much more about developing on Meteor.&lt;/p&gt;
+
+&lt;h1&gt;1. Setting up an accounts system&lt;/h1&gt;
+
+&lt;p&gt;An accounts system can be complicated, but it needn&amp;#39;t be. By installing the following packages, I was able to get up and running pretty fast (with some tweaking, see below):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;accounts-password&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;useraccounts:foundation&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;useraccounts:core&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;useraccounts:core&lt;/code&gt; is actually a dependency that will get automatically downloaded when you install the &lt;code&gt;useraccounts:foundation&lt;/code&gt; package, but due to some of the tweaking I had to do, I had to download it as a custom package.&lt;/p&gt;
+
+&lt;h2&gt;Templates&lt;/h2&gt;
+
+&lt;p&gt;At the minimum, you&amp;#39;ll need to create a login and registration template. And if you are doing a webapp, I suggest also a dashboard (or home) template so that your logged-in users can get redirected there instead of your main landing page.&lt;/p&gt;
+
+&lt;p&gt;In your login template, make sure you have this: &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{&amp;gt; atForm state=&amp;#39;signIn&amp;#39;}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In your registration template, make sure you have this: &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{&amp;gt; atForm state=&amp;#39;signUp&amp;#39;}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In the nav bar, if you want a smart sign-in/sign-out button, then you&amp;#39;ll need to add this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{&amp;gt; atNavButton}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Routing&lt;/h2&gt;
+
+&lt;p&gt;Great, now comes the hard part. We have to set up the actual routes like this in our &lt;code&gt;router.js&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Login and Register Routes&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;AccountsTemplates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configureRoute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;signIn&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;login&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/login&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;siteLogin&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;AccountsTemplates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configureRoute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;signUp&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;register&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/register&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;siteRegister&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;redirect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This takes care of the login and registration templates. Obviously this is assuming that your login and registration templates are named siteLogin and siteRegister respectively.&lt;/p&gt;
+
+&lt;p&gt;When a user is logged in and they try to access your root domain, you&amp;#39;d probably want to redirect them to the dashboard rather than the landing page. To do that, I used this code:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;landingPage&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;layoutTemplate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;landingLayout&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;onBeforeAction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Meteor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/home&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// send user to the dashboard&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// continue to landing page&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notice that I also have a special layout for it, called &lt;code&gt;landingLayout&lt;/code&gt;. The dashboard route is also at the &lt;code&gt;/home&lt;/code&gt; path, so I simply tell it to route there if there is a user logged in.&lt;/p&gt;
+
+&lt;p&gt;As for the dashboard, or in our case the &lt;code&gt;/home&lt;/code&gt; path:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/home&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;siteHome&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;onBeforeAction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AccountsTemplates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ensureSignedIn&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notice that I make use of an &lt;code&gt;AccountsTemplates.ensureSignedIn&lt;/code&gt; function hook to make sure the user is signed in before being able to access the dashboard.&lt;/p&gt;
+
+&lt;h2&gt;Tweaking the packages&lt;/h2&gt;
+
+&lt;p&gt;As of 2015-01-31, there seems to be something odd in the &lt;code&gt;useraccounts:core&lt;/code&gt; package that prevents the navbar login/logout button from finding the correct sign-in link. As a result, in the &lt;code&gt;at_nav_button.js&lt;/code&gt; template helper file, I replaced that particular line with &lt;code&gt;AccountsTemplates.linkClick(&amp;quot;signIn&amp;quot;);&lt;/code&gt;. See example below:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;AT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;atNavButtonEvents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&amp;#39;click #at-nav-button&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Meteor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;AccountsTemplates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;logout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;AccountsTemplates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;linkClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;signIn&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// this is correct&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Another curious thing about the nav button template is that it (by default) comes wrapped in an &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; element. To see what I mean, take a look at &lt;code&gt;at_nav_button.html&lt;/code&gt; inside the &lt;code&gt;useraccounts:foundation&lt;/code&gt; package. I replaced:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;template&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;atNavButton&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;has-form&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;at-nav-button&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;button&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/template&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;with:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;template&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;atNavButton&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;at-nav-button&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/template&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This way, I can make sure that it will fit with however I wanted to style the nav bar.&lt;/p&gt;
+
+&lt;h2&gt;Other settings&lt;/h2&gt;
+
+&lt;p&gt;There will likely be other settings you&amp;#39;ll want to set. For that, you should create an accounts.js file in the server folder. Then, you can have a look at what the documentation says &lt;a href=&quot;https://github.com/meteor-useraccounts/core/blob/master/Guide.md#options&quot;&gt;here&lt;/a&gt; about what options you have.&lt;/p&gt;
+
+&lt;h1&gt;2. Getting email verification up and running&lt;/h1&gt;
+
+&lt;h2&gt;1. Install the email package&lt;/h2&gt;
+
+&lt;p&gt;This is pretty self-explanatory, but I also recommend that you add the houston admin console so you can easily check to see if your user&amp;#39;s e-mails are verified. This step would just require you to type the following into the command line:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;meteor add email houston:admin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;2. Acquiring an SMTP Server&lt;/h2&gt;
+
+&lt;p&gt;For this step, I simply signed up for a free account on mail-gun. There are a lot of options out there, particularly if you don&amp;#39;t mind paying for it. On the free side, there&amp;#39;s mail-gun&amp;#39;s free-level offering which is sufficient for testing at this early stage. Apparently there&amp;#39;s also Gmail&amp;#39;s own SMTP server that you can use for free if you have a Gmail account, but I was not able to get that running. Besides, it was a lot more simple to use mail-gun so I recommend them.&lt;/p&gt;
+
+&lt;h2&gt;3. Setting up your SMTP variables&lt;/h2&gt;
+
+&lt;p&gt;Set your environmental variable like so:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// server/smtp.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Meteor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;smtp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;username@example.com&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;p4$$w0rd&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;s1&quot;&gt;&amp;#39;smtp.gmail.com&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// eg: mail.gandi.net&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;465&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MAIL_URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;smtp://&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;smtp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;smtp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;@&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;smtp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;smtp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you used mailgun, it should look something like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;process.env.MAIL_URL = &amp;#39;smtp://postmaster%40somelongstringofnumbersandletters.mailgun.org:anotherlongstringofnumbersandletters@smtp.mailgun.org:587&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note that the &amp;quot;%40&amp;quot; in &amp;quot;postmaster%40&amp;quot; represents the &lt;code&gt;@&lt;/code&gt; symbol.&lt;/p&gt;
+
+&lt;h2&gt;4. Configure routes&lt;/h2&gt;
+
+&lt;p&gt;And finally, all you have to do is to configure the route for your e-mail verification page:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;AccountsTemplates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configureRoute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;verifyEmail&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;verifyEmail&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/verify-email&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Removing Autopublish&lt;/h1&gt;
+
+&lt;p&gt;Run command: &lt;code&gt;meteor remove autopublish&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This means we will have to write our own rules for publishing and subscribing collections.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// client/main.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Meteor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;subscribe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;dailyEntries&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// server/publications.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Meteor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;publish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;dailyEntries&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DailyEntries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We make sure to only publish the entries where the userId matches the current user&amp;#39;s userId.&lt;/p&gt;
+
+&lt;h1&gt;Removing Insecure&lt;/h1&gt;
+
+&lt;p&gt;Run command: &lt;code&gt;meteor remove insecure&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This means that we want to set restrictions on who can insert/update/remove items in a collection. First let&amp;#39;s define a function that we can use to make sure the user owns a particular document in the collection:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// lib/permissions.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;ownsDocument&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now we write allow statements in to let Meteor know under what circumstances the insert/update/remove functions are allowed:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// lib/collections/dailyEntries.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;DailyEntries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;allow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// only allow insertion if you are logged in&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!!&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;},&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// only allow update/remove if the user owns the document&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ownsDocument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ownsDocument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+ </entry>
  
  <entry>
    <title>Code Snippets: Part 2</title>
