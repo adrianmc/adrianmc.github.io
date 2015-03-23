@@ -15,3 +15,5 @@ As I was using blogspot for this purpose, I would often forget about what my wee
 
 ## The First Attempt
 
+I had to get through learning how to implement Accounts
+- required tweaking packages and contributing to open source code
