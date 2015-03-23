@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us" xmlns:fb="http://ogp.me/ns/fb#">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Open Graph object meta tags-->
+  <meta property="og:url" content="http://adrianmcli.com/2015/03/22/how-to-web-dev/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="How to Learn Web Development &middot; adrian" /> 
+  <meta property="og:image" content="http://adrianmcli.com/public/assets/bg2.jpg" />
+  <meta property="og:description" content="Adrian Li's personal blog detailing web technology and entrepreneurship." />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to Learn Web Development &middot; adrian
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface|Special+Elite">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- JS includes -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="public/js/scripts.js"></script>
+</head>
+
+
+  <body class="theme-base-fab">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          adrian
+        </a>
+      </h1>
+      <p class="lead">sometimes the most powerful drive comes from a quiet desperation</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive/">Archive</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/adrianmc">GitHub</a>
+      <span class="sidebar-nav-item">v1.0</span>
+    </nav>
+
+    <p>&copy; 2015. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">How to Learn Web Development</h1>
+  <span class="post-date">22 Mar 2015</span>
+  <p>I&#39;ve been running into problems trying to teach people how to do web development. A lot of people lack the iterative mindset that is so crucial for a developer/designer. Here is a short tutorial on my personal mindset when trying to make a webpage that changes the background colour to red whenever the user clicks something.</p>
+
+<p>This is a rather simple thing to make happen, but pay close attention to the approach. This is the same mindset that would be helpful whenver you are learning any type of programming even years later. Please <strong>do not</strong> skip anything and skim this article. Please read through every detail until the end!</p>
+
+<h1>Steps</h1>
+
+<p>We will start by first trying to capture the user&#39;s input and then doing something with it. Afterwards, we will change the background colour. Simple!</p>
+
+<ol>
+<li><p>User clicks something, and the page does something.</p></li>
+<li><p>User clicks something, and the page changes background colour to red.</p></li>
+</ol>
+
+<h1>1. Click and Do</h1>
+
+<p>Here&#39;s the basic structure of pretty much any webpage:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// your javascript here</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- your basic markup here --&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Alright, so first thing we want to do is allow the user to click something. Let&#39;s insert an anchor tag.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// your javascript here</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- your basic markup here --&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Click Me!<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Great, now we have something for the user to click. But hmm, we need it to <em>do something</em> when the user clicks it. Doing something requires some kind of logic, possibly javascript. I wonder how we can run some javascript when a user clicks on an anchor tag.</p>
+
+<p>So I literally just Google&#39;d &quot;how can we run some javascript when a user clicks on an anchor tag.&quot;</p>
+
+<p>The first result I get is <a href="http://stackoverflow.com/questions/134845/href-attribute-for-javascript-links-or-javascriptvoid0">here</a>. It seems that the top answer recommends using this:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span> <span class="na">onclick=</span><span class="s">&quot;myJsFunc();&quot;</span><span class="nt">&gt;</span>Run JavaScript Code<span class="nt">&lt;/a&gt;</span>
+</code></pre></div>
+<p>Okay, so let&#39;s add that in:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// your javascript here</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- your basic markup here --&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span> <span class="na">onclick=</span><span class="s">&quot;myJsFunc();&quot;</span><span class="nt">&gt;</span>Click Me!<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Apparently, the <code>myJsFunc()</code> is the function that is supposed to be run whenever someone clicks on the <code>&lt;a&gt;</code> tag. I wonder if it actually does that. Let&#39;s test it! But first, I&#39;ll need to have that function somewhere.</p>
+
+<p>Let&#39;s declare that function and see if it actually runs. But how do I declare a javascript function?</p>
+
+<p>I Google&#39;d &quot;how to make a function in Javascript&quot;, and the <a href="http://www.w3schools.com/js/js_functions.asp">first link</a> shows me the syntax.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// your javascript here</span>
+        <span class="kd">function</span> <span class="nx">myJsFunc</span><span class="p">(){</span>
+            <span class="c1">// something to indicate that this has run</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- your basic markup here --&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span> <span class="na">onclick=</span><span class="s">&quot;myJsFunc();&quot;</span><span class="nt">&gt;</span>Click Me!<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Okay, I&#39;ve written the function. But how do I find out if it has run? I need to get it to <em>do something</em>, maybe I need a pop-up message. So I Google&#39;d &quot;javascript popup message&quot; and went to the first link <a href="http://www.w3schools.com/js/js_popup.asp">here</a>.</p>
+
+<p>Oh, an Alert Box eh? The example shows <code>alert(&quot;I am an alert box!&quot;);</code>. Hmm, let&#39;s try it:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// your javascript here</span>
+        <span class="kd">function</span> <span class="nx">myJsFunc</span><span class="p">(){</span>
+            <span class="c1">// something to indicate that this has run</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;I am an alert box!&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- your basic markup here --&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span> <span class="na">onclick=</span><span class="s">&quot;myJsFunc();&quot;</span><span class="nt">&gt;</span>Click Me!<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p><strong>Click!</strong></p>
+
+<p>Oh it works! Wonderful. Now the user clicks something, and the page responds by doing something.</p>
+
+<p>WE HAVE COMPLETED STEP ONE!</p>
+
+<p>Let&#39;s celebrate our victory and have some cake. Maybe we can take a break too, whew that was a lot of work.</p>
+
+<h1>2. Click and Change Colour</h1>
+
+<p>Alright, now we&#39;re back. We&#39;ve found out how to make javascript do something whenever the user clicks on something. Now let&#39;s find out how to change the background colour of the page with Javascript.</p>
+
+<p>Let&#39;s Google &quot;How to change the background colour of the page with javascript?&quot; First link <a href="http://www.w3schools.com/jsref/prop_style_backgroundcolor.asp">here</a> shows an example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">document.body.style.backgroundColor = &quot;red&quot;;
+</code></pre></div>
+<p><strong>Wow!</strong> This looks like just what we needed! Let&#39;s put that in and see if it actually works.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// your javascript here</span>
+        <span class="kd">function</span> <span class="nx">myJsFunc</span><span class="p">(){</span>
+            <span class="c1">// something to indicate that this has run</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;I am an alert box!&quot;</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- your basic markup here --&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span> <span class="na">onclick=</span><span class="s">&quot;myJsFunc();&quot;</span><span class="nt">&gt;</span>Click Me!<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p><strong>It does! Another victory!</strong></p>
+
+<p>Great! But it&#39;s kind of annoying that the Alert Box still pops up. It&#39;s served its purpose so I can probably remove it. I wonder if I&#39;ll need to find out if the function is still running later on though. Hmm, I can just comment it out for now.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// your javascript here</span>
+        <span class="kd">function</span> <span class="nx">myJsFunc</span><span class="p">(){</span>
+            <span class="c1">// something to indicate that this has run</span>
+            <span class="c1">// alert(&quot;I am an alert box!&quot;);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- your basic markup here --&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span> <span class="na">onclick=</span><span class="s">&quot;myJsFunc();&quot;</span><span class="nt">&gt;</span>Click Me!<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Excellent! No pesky alert box wasting my time. Man, programming is tiring!</p>
+
+<h1>Discussion</h1>
+
+<h2>Constant Googling</h2>
+
+<p>Notice how I Google&#39;d every single &quot;stupid&quot; question I might have had? Well, it turns out that this is how most programmers work. Not everyone can remember every little thing about programming. For example, it&#39;s kind of difficult to expect people to memorize <code>document.body.style.backgroundColor</code> is the proper property to use when setting background colours. So it is absolutely reasonable and even recommended that you look this up whenever you need it.</p>
+
+<p>In fact, a refusal to look things up and an insistence on trying to remember these things will probably stop you from landing a job in programming. You have to focus on what&#39;s important and ruthlessly cut out what you don&#39;t need to know off the top of your head. It&#39;s important to keep things simple.</p>
+
+<h2>Multiple Pathways</h2>
+
+<p>There are always going to be multiple ways to do something. So for example, I could&#39;ve used a <code>&lt;button&gt;</code> element instead of an anchor tag. But the proces would be the same. I would&#39;ve Google&#39;d &quot;how to run javascript when a button tag is pressed&quot; and I would likewise have found a way to do what we did. There are also multiple ways to run javascript when an anchor tag is clicked.</p>
+
+<p>It doesn&#39;t really matter what is the &quot;best&quot; way because we can always refactor. What&#39;s important is getting something that works. You can always go back and clean things up or use a <em>better</em> way of writing code. This brings me to the next point.</p>
+
+<h2>Small Steps in the Right Direction</h2>
+
+<p>It&#39;s about taking small, tiny, even miniscule steps towards your goal. The journey of a thousand miles begins with a single step. If you let yourself get frustrated, then you&#39;ll never reach your goal. Keep cutting things down, keep trying to break apart what you need to do to get just a tiny bit closer to your goal. I hope the example above has made it clear how I do this personally.</p>
+
+<h2>Always Test</h2>
+
+<p>Notice how the first thing I did every time I added something new was to test if things were working. You have to constantly be testing and making sure something is working so you can build that understanding of how things are tangibly working inside your head.</p>
+
+<p>It may have seemed like it&#39;d waste a lot of time to throw in that Alert Box. You may have thought, &quot;Why are you wasting time on this?! Maybe you should just change the colour in the javascript and see if it changes it to red!&quot;</p>
+
+<p>Of course, I totally could&#39;ve done that. But I wanted to take tiny steps. And for me, it was very important that I knew the function was in fact running before I went any further. It&#39;s not a rush, and it&#39;ll do you much good to have a better understanding of what&#39;s going on. So take the time to test everything.</p>
+
+<h2>This is Real</h2>
+
+<p>You may think that I am &quot;dumbing myself down&quot; with this tutorial just to explain something to newbies. You would be wrong.</p>
+
+<p>I actually had to go through this not too long ago because I hadn&#39;t done web development in a while. The fact of the matter is, programmers Google things ALL THE TIME. Sometimes it feels like you&#39;re starting off as a baby each time. There have been countless times where I&#39;ve had to Google &quot;if statement in Python&quot; or a &quot;For loop in Java&quot; because I hadn&#39;t used that language in a while.</p>
+
+<p>This is good, because you shouldn&#39;t be memorizing these things (i.e. the syntax). It&#39;s way more important to just have an understanding of the things you need to look up.</p>
+
+<h1>Going Forward</h1>
+
+<p>Now you may want to proceed to styling things. Well, CSS is the language of choice here. And whatever you seek to do you can probably just Google it. If you would like to generate a random colour instead of just red, then I would suggest googling &quot;javascript generate random color&quot; and you&#39;ll find the top post to be very helpful.</p>
+
+<p>Whatever the case, you need to be unafraid to test things. You need to be able to take the time to pare things down to their simplest elements and then only attempt those very small victories. Otherwise, maybe not now, but eventually you will burn out and probably tell yourself that &quot;oh I guess I&#39;m just not good at programming.&quot;</p>
+
+<p>You have to be humble. A lot of people (adults especially) try to rush into things and they think it shouldn&#39;t take them that much effort and hassle to change a background colour to red. Well it is this arrogance that drives people crazy and eventually makes them give up programming and web development.</p>
+
+<p>Don&#39;t let this happen to you. Be humble, take small steps, and enjoy the process. You&#39;ll get to the end soon enough.</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2015/02/17/entrepreneurs-should-not-do-mobile/">
+            Entrepreneurs Should Not do Mobile App Development
+            <small>17 Feb 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/02/16/code-snippets-3/">
+            Code Snippets: Part 3
+            <small>16 Feb 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/01/29/code-snippets-2/">
+            Code Snippets: Part 2
+            <small>29 Jan 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      
+<!-- Add Disqus comments. -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'adrianli'; // required: replace example with your forum shortname
+  var disqus_identifier = "/2015/03/22/how-to-web-dev/";
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58837515-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

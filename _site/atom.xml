@@ -4,13 +4,218 @@
  <title>adrian</title>
  <link href="http://adrianmcli.com/atom.xml" rel="self"/>
  <link href="http://adrianmcli.com/"/>
- <updated>2015-03-22T19:16:16-07:00</updated>
+ <updated>2015-03-23T02:09:03-07:00</updated>
  <id>http://adrianmcli.com</id>
  <author>
    <name>Adrian Li</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>How to Learn Web Development</title>
+   <link href="http://adrianmcli.com/2015/03/22/how-to-web-dev/"/>
+   <updated>2015-03-22T00:00:00-07:00</updated>
+   <id>http://adrianmcli.com/2015/03/22/how-to-web-dev</id>
+   <content type="html">&lt;p&gt;I&amp;#39;ve been running into problems trying to teach people how to do web development. A lot of people lack the iterative mindset that is so crucial for a developer/designer. Here is a short tutorial on my personal mindset when trying to make a webpage that changes the background colour to red whenever the user clicks something.&lt;/p&gt;
+
+&lt;p&gt;This is a rather simple thing to make happen, but pay close attention to the approach. This is the same mindset that would be helpful whenver you are learning any type of programming even years later. Please &lt;strong&gt;do not&lt;/strong&gt; skip anything and skim this article. Please read through every detail until the end!&lt;/p&gt;
+
+&lt;h1&gt;Steps&lt;/h1&gt;
+
+&lt;p&gt;We will start by first trying to capture the user&amp;#39;s input and then doing something with it. Afterwards, we will change the background colour. Simple!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;User clicks something, and the page does something.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;User clicks something, and the page changes background colour to red.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1&gt;1. Click and Do&lt;/h1&gt;
+
+&lt;p&gt;Here&amp;#39;s the basic structure of pretty much any webpage:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// your javascript here&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- your basic markup here --&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Alright, so first thing we want to do is allow the user to click something. Let&amp;#39;s insert an anchor tag.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// your javascript here&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- your basic markup here --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Click Me!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Great, now we have something for the user to click. But hmm, we need it to &lt;em&gt;do something&lt;/em&gt; when the user clicks it. Doing something requires some kind of logic, possibly javascript. I wonder how we can run some javascript when a user clicks on an anchor tag.&lt;/p&gt;
+
+&lt;p&gt;So I literally just Google&amp;#39;d &amp;quot;how can we run some javascript when a user clicks on an anchor tag.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;The first result I get is &lt;a href=&quot;http://stackoverflow.com/questions/134845/href-attribute-for-javascript-links-or-javascriptvoid0&quot;&gt;here&lt;/a&gt;. It seems that the top answer recommends using this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;javascript:void(0)&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;myJsFunc();&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Run JavaScript Code&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Okay, so let&amp;#39;s add that in:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// your javascript here&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- your basic markup here --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;javascript:void(0)&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;myJsFunc();&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Click Me!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Apparently, the &lt;code&gt;myJsFunc()&lt;/code&gt; is the function that is supposed to be run whenever someone clicks on the &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tag. I wonder if it actually does that. Let&amp;#39;s test it! But first, I&amp;#39;ll need to have that function somewhere.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s declare that function and see if it actually runs. But how do I declare a javascript function?&lt;/p&gt;
+
+&lt;p&gt;I Google&amp;#39;d &amp;quot;how to make a function in Javascript&amp;quot;, and the &lt;a href=&quot;http://www.w3schools.com/js/js_functions.asp&quot;&gt;first link&lt;/a&gt; shows me the syntax.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// your javascript here&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myJsFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// something to indicate that this has run&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- your basic markup here --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;javascript:void(0)&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;myJsFunc();&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Click Me!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Okay, I&amp;#39;ve written the function. But how do I find out if it has run? I need to get it to &lt;em&gt;do something&lt;/em&gt;, maybe I need a pop-up message. So I Google&amp;#39;d &amp;quot;javascript popup message&amp;quot; and went to the first link &lt;a href=&quot;http://www.w3schools.com/js/js_popup.asp&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Oh, an Alert Box eh? The example shows &lt;code&gt;alert(&amp;quot;I am an alert box!&amp;quot;);&lt;/code&gt;. Hmm, let&amp;#39;s try it:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// your javascript here&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myJsFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// something to indicate that this has run&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;I am an alert box!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- your basic markup here --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;javascript:void(0)&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;myJsFunc();&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Click Me!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Click!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Oh it works! Wonderful. Now the user clicks something, and the page responds by doing something.&lt;/p&gt;
+
+&lt;p&gt;WE HAVE COMPLETED STEP ONE!&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s celebrate our victory and have some cake. Maybe we can take a break too, whew that was a lot of work.&lt;/p&gt;
+
+&lt;h1&gt;2. Click and Change Colour&lt;/h1&gt;
+
+&lt;p&gt;Alright, now we&amp;#39;re back. We&amp;#39;ve found out how to make javascript do something whenever the user clicks on something. Now let&amp;#39;s find out how to change the background colour of the page with Javascript.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s Google &amp;quot;How to change the background colour of the page with javascript?&amp;quot; First link &lt;a href=&quot;http://www.w3schools.com/jsref/prop_style_backgroundcolor.asp&quot;&gt;here&lt;/a&gt; shows an example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;document.body.style.backgroundColor = &amp;quot;red&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Wow!&lt;/strong&gt; This looks like just what we needed! Let&amp;#39;s put that in and see if it actually works.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// your javascript here&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myJsFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// something to indicate that this has run&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;I am an alert box!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;red&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- your basic markup here --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;javascript:void(0)&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;myJsFunc();&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Click Me!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;It does! Another victory!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Great! But it&amp;#39;s kind of annoying that the Alert Box still pops up. It&amp;#39;s served its purpose so I can probably remove it. I wonder if I&amp;#39;ll need to find out if the function is still running later on though. Hmm, I can just comment it out for now.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// your javascript here&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myJsFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// something to indicate that this has run&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// alert(&amp;quot;I am an alert box!&amp;quot;);&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;red&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- your basic markup here --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;javascript:void(0)&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;myJsFunc();&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Click Me!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Excellent! No pesky alert box wasting my time. Man, programming is tiring!&lt;/p&gt;
+
+&lt;h1&gt;Discussion&lt;/h1&gt;
+
+&lt;h2&gt;Constant Googling&lt;/h2&gt;
+
+&lt;p&gt;Notice how I Google&amp;#39;d every single &amp;quot;stupid&amp;quot; question I might have had? Well, it turns out that this is how most programmers work. Not everyone can remember every little thing about programming. For example, it&amp;#39;s kind of difficult to expect people to memorize &lt;code&gt;document.body.style.backgroundColor&lt;/code&gt; is the proper property to use when setting background colours. So it is absolutely reasonable and even recommended that you look this up whenever you need it.&lt;/p&gt;
+
+&lt;p&gt;In fact, a refusal to look things up and an insistence on trying to remember these things will probably stop you from landing a job in programming. You have to focus on what&amp;#39;s important and ruthlessly cut out what you don&amp;#39;t need to know off the top of your head. It&amp;#39;s important to keep things simple.&lt;/p&gt;
+
+&lt;h2&gt;Multiple Pathways&lt;/h2&gt;
+
+&lt;p&gt;There are always going to be multiple ways to do something. So for example, I could&amp;#39;ve used a &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; element instead of an anchor tag. But the proces would be the same. I would&amp;#39;ve Google&amp;#39;d &amp;quot;how to run javascript when a button tag is pressed&amp;quot; and I would likewise have found a way to do what we did. There are also multiple ways to run javascript when an anchor tag is clicked.&lt;/p&gt;
+
+&lt;p&gt;It doesn&amp;#39;t really matter what is the &amp;quot;best&amp;quot; way because we can always refactor. What&amp;#39;s important is getting something that works. You can always go back and clean things up or use a &lt;em&gt;better&lt;/em&gt; way of writing code. This brings me to the next point.&lt;/p&gt;
+
+&lt;h2&gt;Small Steps in the Right Direction&lt;/h2&gt;
+
+&lt;p&gt;It&amp;#39;s about taking small, tiny, even miniscule steps towards your goal. The journey of a thousand miles begins with a single step. If you let yourself get frustrated, then you&amp;#39;ll never reach your goal. Keep cutting things down, keep trying to break apart what you need to do to get just a tiny bit closer to your goal. I hope the example above has made it clear how I do this personally.&lt;/p&gt;
+
+&lt;h2&gt;Always Test&lt;/h2&gt;
+
+&lt;p&gt;Notice how the first thing I did every time I added something new was to test if things were working. You have to constantly be testing and making sure something is working so you can build that understanding of how things are tangibly working inside your head.&lt;/p&gt;
+
+&lt;p&gt;It may have seemed like it&amp;#39;d waste a lot of time to throw in that Alert Box. You may have thought, &amp;quot;Why are you wasting time on this?! Maybe you should just change the colour in the javascript and see if it changes it to red!&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;Of course, I totally could&amp;#39;ve done that. But I wanted to take tiny steps. And for me, it was very important that I knew the function was in fact running before I went any further. It&amp;#39;s not a rush, and it&amp;#39;ll do you much good to have a better understanding of what&amp;#39;s going on. So take the time to test everything.&lt;/p&gt;
+
+&lt;h2&gt;This is Real&lt;/h2&gt;
+
+&lt;p&gt;You may think that I am &amp;quot;dumbing myself down&amp;quot; with this tutorial just to explain something to newbies. You would be wrong.&lt;/p&gt;
+
+&lt;p&gt;I actually had to go through this not too long ago because I hadn&amp;#39;t done web development in a while. The fact of the matter is, programmers Google things ALL THE TIME. Sometimes it feels like you&amp;#39;re starting off as a baby each time. There have been countless times where I&amp;#39;ve had to Google &amp;quot;if statement in Python&amp;quot; or a &amp;quot;For loop in Java&amp;quot; because I hadn&amp;#39;t used that language in a while.&lt;/p&gt;
+
+&lt;p&gt;This is good, because you shouldn&amp;#39;t be memorizing these things (i.e. the syntax). It&amp;#39;s way more important to just have an understanding of the things you need to look up.&lt;/p&gt;
+
+&lt;h1&gt;Going Forward&lt;/h1&gt;
+
+&lt;p&gt;Now you may want to proceed to styling things. Well, CSS is the language of choice here. And whatever you seek to do you can probably just Google it. If you would like to generate a random colour instead of just red, then I would suggest googling &amp;quot;javascript generate random color&amp;quot; and you&amp;#39;ll find the top post to be very helpful.&lt;/p&gt;
+
+&lt;p&gt;Whatever the case, you need to be unafraid to test things. You need to be able to take the time to pare things down to their simplest elements and then only attempt those very small victories. Otherwise, maybe not now, but eventually you will burn out and probably tell yourself that &amp;quot;oh I guess I&amp;#39;m just not good at programming.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;You have to be humble. A lot of people (adults especially) try to rush into things and they think it shouldn&amp;#39;t take them that much effort and hassle to change a background colour to red. Well it is this arrogance that drives people crazy and eventually makes them give up programming and web development.&lt;/p&gt;
+
+&lt;p&gt;Don&amp;#39;t let this happen to you. Be humble, take small steps, and enjoy the process. You&amp;#39;ll get to the end soon enough.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Entrepreneurs Should Not do Mobile App Development</title>
