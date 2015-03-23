@@ -4,7 +4,7 @@
  <title>adrian</title>
  <link href="http://adrianmcli.com/atom.xml" rel="self"/>
  <link href="http://adrianmcli.com/"/>
- <updated>2015-03-23T02:11:18-07:00</updated>
+ <updated>2015-03-23T09:14:43-07:00</updated>
  <id>http://adrianmcli.com</id>
  <author>
    <name>Adrian Li</name>
@@ -17,7 +17,7 @@
    <link href="http://adrianmcli.com/2015/03/22/how-to-web-dev/"/>
    <updated>2015-03-22T00:00:00-07:00</updated>
    <id>http://adrianmcli.com/2015/03/22/how-to-web-dev</id>
-   <content type="html">&lt;p&gt;I&amp;#39;ve been running into problems trying to teach people how to do web development. A lot of people lack the iterative mindset that is so crucial for a developer/designer. Here is a short tutorial on my personal mindset when trying to make a webpage that changes the background colour to red whenever the user clicks something.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I&amp;#39;ve been running into problems trying to teach people how to do web development. A lot of people lack the iterative mindset that is so crucial for a developer/designer. People are always in a rush to get things done and it often holds them back. Here is a short tutorial on my personal mindset when trying to make a webpage that changes the background colour to red whenever the user clicks something.&lt;/p&gt;
 
 &lt;p&gt;This is a rather simple thing to make happen, but pay close attention to the approach. This is the same mindset that would be helpful whenver you are learning any type of programming even years later. Please &lt;strong&gt;do not&lt;/strong&gt; skip anything and skim this article. Please read through every detail until the end!&lt;/p&gt;
 
