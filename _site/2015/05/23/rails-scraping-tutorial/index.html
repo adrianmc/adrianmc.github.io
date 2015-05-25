@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us" xmlns:fb="http://ogp.me/ns/fb#">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Open Graph object meta tags-->
+  <meta property="og:url" content="http://adrianmcli.com/2015/05/23/rails-scraping-tutorial/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Simple Scraping Tutorial in Rails &middot; adrian" /> 
+  <meta property="og:image" content="http://adrianmcli.com/public/assets/bg2.jpg" />
+  <meta property="og:description" content="Adrian Li's personal blog detailing web technology and entrepreneurship." />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Simple Scraping Tutorial in Rails &middot; adrian
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface|Special+Elite">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- JS includes -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="public/js/scripts.js"></script>
+</head>
+
+
+  <body class="theme-base-fab">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          adrian
+        </a>
+      </h1>
+      <p class="lead">sometimes the most powerful drive comes from a quiet desperation</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive/">Archive</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/adrianmc">GitHub</a>
+      <span class="sidebar-nav-item">v1.0</span>
+    </nav>
+
+    <p>&copy; 2015. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Simple Scraping Tutorial in Rails</h1>
+  <span class="post-date">23 May 2015</span>
+  <p>For this tutorial, we are going to build a site with Ruby on Rails that can scrape a particular webpage for some specific information. More specifically, this tutorial will walk you through how to come up with a scraper for the titles and links on <a href="http://www.reddit.com/">Reddit&#39;s</a> front page. You can go to the website and take a look to see what it is we are trying to obtain.</p>
+
+<h2>Learning Objectives</h2>
+
+<p>By doing this tutorial you should have an understanding of the following:</p>
+
+<ol>
+<li>How to approach scraping a website</li>
+<li>How to use the Interactive Ruby Shell (IRB)</li>
+<li>How to start a Ruby on Rails project</li>
+<li>What a controller is</li>
+<li>What a view is</li>
+</ol>
+
+<h2>Step 1: Try it in the IRB</h2>
+
+<p>The IRB is kind of like a sandbox, it allows you to play with (and execute) Ruby code without having to start a huge project or do anything complex at all. That&#39;s why it is often a good idea to try things out in the IRB before we start building a whole site and getting into a lot of complexities, it&#39;s always nice to play with ideas and make sure that they are feasible and that you have some idea of how you&#39;re going to approach the problem you want to solve.</p>
+
+<h3>Start the IRB</h3>
+
+<p>This tutorial is going to assume that you have both Ruby and Rails already installed. The IRB comes with Ruby, so all you have to do is go to the terminal and type <code>irb</code>. You should get a prompt like this:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">001</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>You can try to play around with it, but we won&#39;t spend too much time on explaining the IRB itself. You can do simple math like this:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">001</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">2</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">002</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">003</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="o">=&gt;</span> <span class="mi">5</span>
+</code></pre></div>
+<p>From this point on, I will omit writing the prompt <code>irb(main):001:0&gt;</code>, it&#39;s assumed that you will be typing code at the prompt.</p>
+
+<h3>Getting Ready to Scrape</h3>
+
+<p>We will need a tool to help us open webpages in our code, and also the ability to go through the HTML and find what we want. The former is accomplished by a wrapper called <code>open-uri</code> and the latter can be done with a parser called <code>nokogiri</code>.</p>
+
+<p>So for our first step, we will <code>require</code> those two tools and then use them to load an entire page into our variable, <code>doc</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;nokogiri&#39;</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.reddit.com/&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>Notice that the <code>open</code> function opens the webpage, and then <code>Nokogiri</code> parses it into the <code>doc</code> variable as HTML. You will also see a lot of gibberish being displayed, but that&#39;s actually the information on the page as parsed by <code>Nokogiri</code>.</p>
+
+<h3>Identifying What We Want</h3>
+
+<p>Now that we&#39;ve grabbed the entire page in the <code>doc</code> variable, we can now mess with it however we want. So let&#39;s try to see how we can get the titles and links of the entries. To do that, we have to understand the structure of how the page is laid out. Let&#39;s go to the browser and find out.</p>
+
+<p>So go to your favourite browser, navigate to <a href="http://www.reddit.com/">reddit.com</a>, right-click one of the entry titles and select <code>inspect element</code>. From inspecting the element of an entry title, you should find something that looks like this:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">...
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;entry unvoted&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;title may-blank &quot;</span> <span class="na">href=</span><span class="s">&quot;http://i.imgur.com/6aEop17.jpg&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>The ingredients section on this toothpaste tube explains where each ingredient comes from and what it does<span class="nt">&lt;/a&gt;</span>
+
+...
+</code></pre></div>
+<p>What this tells us, is that every entry is wrapped inside a <code>&lt;div&gt;</code> with the class <code>entry</code>, and the title and link that we want is represented by an anchor tag <code>&lt;a&gt;</code> inside of a paragraph tag <code>&lt;p&gt;</code> with the class of <code>title</code>.</p>
+
+<p>That&#39;s kind of confusing, so let&#39;s start simple.</p>
+
+<h3>Getting at the Information</h3>
+
+<p>Let&#39;s start small and simply try to see if we can get a variable that represents all the entries on the page.</p>
+
+<p><strong>Note:</strong> Many scrapers use something called X-Path, but for simplicity&#39;s sake, we will use CSS selectors as Nokogiri provides that option for us.</p>
+
+<p>Let&#39;s put all the <code>div</code> tags on the page with a class of <code>entry</code> inside a variable we will call <code>entries</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">entries</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;.entry&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Let&#39;s check how many we&#39;ve got:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">entries</span><span class="o">.</span><span class="n">length</span>
+<span class="o">=&gt;</span> <span class="mi">35</span>
+</code></pre></div>
+<p>Great! If you go to the front page of Reddit.com in your browser, you can count exactly 35 links on the front page. We&#39;re getting somewhere!</p>
+
+<p>Now let&#39;s try to get the specific title of just one post. We&#39;ll try with just the first post for now, so we&#39;ll use <code>entries[0]</code> as our starting point and try to get more specific from there.</p>
+
+<p>Try the following:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">entries</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Note that the selector string <code>p.title&gt;a</code> simply means the <code>p</code> tag with a class of <code>title</code> and then get the <code>a</code> tag immediately under that.</p>
+
+<p>If you take a careful look, you should see a representation of exactly the anchor tag we are looking for. In order to get the title and the link, we will use the following code:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">entries</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>         <span class="c1"># title</span>
+<span class="n">entries</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="s1">&#39;href&#39;</span><span class="o">]</span>   <span class="c1"># link</span>
+</code></pre></div>
+<p>The code for the title is quite self-explanatory, it is simply the text of the tag itself. For the link, we have to find the <code>href</code> attribute, and attributes are stored as the first child of the object, so that is why we type <code>[0][&#39;href&#39;]</code> to get the link.</p>
+
+<p>If you type those two lines above, you should be able to see the title and link as displayed by IRB.</p>
+
+<p>Now let&#39;s see if we can list the titles for all 35 entries. Let&#39;s use the <code>.each</code> construct:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">entries</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span>
+    <span class="nb">puts</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="nb">puts</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="s1">&#39;href&#39;</span><span class="o">]</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Notice how we use <code>puts</code> so that Ruby knows to display it onto our screen.</p>
+
+<p>You should see the titles and their links being displayed in the terminal.</p>
+
+<h3>Using a Class</h3>
+
+<p>Okay great, we know how to get the information, but this is kind of unwieldy, so let&#39;s attempt to create a class of <code>Entry</code> objects. Each <code>Entry</code> object will house the title and link for easy access. We will then try to create a whole array of these objects so it will be easy for us to manage and move around.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Entry</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+        <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="vi">@link</span> <span class="o">=</span> <span class="n">link</span>
+    <span class="k">end</span>
+    <span class="kp">attr_reader</span> <span class="ss">:title</span>
+    <span class="kp">attr_reader</span> <span class="ss">:link</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Note that every time we create an <code>Entry</code> object, we will need to initialize it with a title and a link. The initialized values will be assigned to the instance variables <code>@title</code> and <code>@link</code> respectively. The title and link of each Entry object is also made readable by the <code>attr_reader</code> lines.</p>
+
+<p>Now let&#39;s try to make an array of Entry objects:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Create an empty array</span>
+<span class="n">entriesArray</span> <span class="o">=</span> <span class="o">[]</span>
+
+<span class="c1"># For each entry, </span>
+<span class="c1"># we&#39;re going to make an Entry object </span>
+<span class="c1"># and push it into the array</span>
+<span class="n">entries</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">link</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="s1">&#39;href&#39;</span><span class="o">]</span>
+    <span class="n">newEntry</span> <span class="o">=</span> <span class="no">Entry</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+    <span class="n">entriesArray</span> <span class="o">&lt;&lt;</span> <span class="n">newEntry</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>You can try runing something like <code>entriesArray[0].title</code> or <code>entriesArray[0].link</code> to ensure that this works.</p>
+
+<h3>Refactoring</h3>
+
+<p>Refactoring means to change the code to make it better (in any number of ways) while keeping its functionality the same.</p>
+
+<p>Let&#39;s refactor the code so that it&#39;s more readable. We can immediately place the newly created <code>Entry</code> object into the <code>entriesArray</code> instead of using the temporary variable <code>newEntry</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">entriesArray</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="n">entries</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">link</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="s1">&#39;href&#39;</span><span class="o">]</span>
+    <span class="n">entriesArray</span> <span class="o">&lt;&lt;</span> <span class="no">Entry</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Should we refactor again so that we remove the need for the temporary variables of <code>title</code> and <code>link</code>?</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">entriesArray</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="n">entries</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span>
+    <span class="n">entriesArray</span> <span class="o">&lt;&lt;</span> <span class="no">Entry</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="s1">&#39;href&#39;</span><span class="o">]</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>This is not so easy to read, so that&#39;s not good. We should refactor to be more concise when possible, but we should not reduce our code so much that it becomes hard to read.</p>
+
+<p>Now we&#39;re ready to make this a Rails app.</p>
+
+<h2>Step 2: Make this a Rails App</h2>
+
+<p>Let&#39;s open a brand new terminal and type in the following to start our brand new Rails app:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">rails new scraper
+</code></pre></div>
+<p>After some setup stuff is run, you can <code>cd</code> into the directory and then type in <code>rails server</code> to run the app. Navigate to <code>http://localhost:3000</code> in your browser to see the default app page.</p>
+
+<h3>Routing, Actions, and Controllers</h3>
+
+<p>The very basic explanation of what controllers do is this: When you try to access a website run by rails, a bunch of code in the rails app (called a router) will direct it to process a block of code (called an action) inside a particular file (called a controller).</p>
+
+<p>Essentially, a controller is what processes a request sent to the server by a client. And each controller can house different actions.</p>
+
+<p>For our example, let&#39;s add the <code>scrape_reddit</code> action inside our main controller in <code>app/controllers/application_controller.rb</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+
+  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+
+  <span class="k">def</span> <span class="nf">scrape_reddit</span>
+    <span class="n">render</span> <span class="ss">text</span><span class="p">:</span> <span class="s1">&#39;scrape reddit data here&#39;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>We just made an action inside the main application controller. Right now, it does nothing other than try to render the text &quot;scrape reddit data here&quot;, we will add more functionality to this later. We just want to see that it works first.</p>
+
+<p>Now let&#39;s point to it with our router so that it loads right away when we load our webpage.</p>
+
+<p>Add the following to <code>app/config/routes.rb</code></p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">draw</span> <span class="k">do</span>
+
+  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+
+  <span class="n">root</span> <span class="s1">&#39;application#scrape_reddit&#39;</span>
+
+  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+
+<span class="k">end</span>
+</code></pre></div>
+<p>What we&#39;re doing here is to say that the <code>root</code> route should be directed to the <code>application</code> controller and more specifically, the <code>scrape_reddit</code> action within that controller.</p>
+
+<p>Now let&#39;s test it. Go back to your browser and hit refresh. You should simply see the text &quot;scrape reddit data here&quot;.</p>
+
+<p>Great, it works as expected! But we don&#39;t just want to render the text, we want to scrape Reddit&#39;s front page and then render the titles and links.</p>
+
+<h3>Scraping a Page</h3>
+
+<p>Let&#39;s start small and grab the front page like we did before in IRB. Just for fun we&#39;ll also try to see what happens when we render the retrieved document.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">scrape_reddit</span>
+  <span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
+  <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.reddit.com/&quot;</span><span class="p">))</span>
+  <span class="n">render</span> <span class="ss">text</span><span class="p">:</span> <span class="n">doc</span> 
+<span class="k">end</span>
+</code></pre></div>
+<p>Go back to the browser, refresh and see. No you&#39;re not dreaming, it is actually pulling and displaying the reddit front page itself!</p>
+
+<p>Of course this is overkill, so let&#39;s get more specific and paste our previous code into the <code>scrape_reddit</code> action so that we can grab just the titles and links.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">scrape_reddit</span>
+  <span class="c1"># Pull in the page</span>
+  <span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
+  <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.reddit.com/&quot;</span><span class="p">))</span>
+
+  <span class="c1"># Narrow down on what we want and build the entries array</span>
+  <span class="n">entries</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;.entry&#39;</span><span class="p">)</span>
+  <span class="n">entriesArray</span> <span class="o">=</span> <span class="o">[]</span>
+  <span class="n">entries</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">link</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="s1">&#39;href&#39;</span><span class="o">]</span>
+    <span class="n">entriesArray</span> <span class="o">&lt;&lt;</span> <span class="no">Entry</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="c1"># We&#39;ll just try to render the array and see what happens</span>
+  <span class="n">render</span> <span class="ss">text</span><span class="p">:</span> <span class="n">entriesArray</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>If you tried to refresh and run the changes above, you&#39;ll encounter an error. That&#39;s because we forgot to define our <code>Entry</code> class! So let&#39;s do that right now, outside of the action itself:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+
+  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+
+  <span class="c1"># Define the Entry object</span>
+  <span class="k">class</span> <span class="nc">Entry</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+      <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+      <span class="vi">@link</span> <span class="o">=</span> <span class="n">link</span>
+    <span class="k">end</span>
+    <span class="kp">attr_reader</span> <span class="ss">:title</span>
+    <span class="kp">attr_reader</span> <span class="ss">:link</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">scrape_reddit</span>
+    <span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.reddit.com/&quot;</span><span class="p">))</span>
+
+    <span class="n">entries</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;.entry&#39;</span><span class="p">)</span>
+    <span class="n">entriesArray</span> <span class="o">=</span> <span class="o">[]</span>
+    <span class="n">entries</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span>
+      <span class="n">title</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+      <span class="n">link</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="s1">&#39;href&#39;</span><span class="o">]</span>
+      <span class="n">entriesArray</span> <span class="o">&lt;&lt;</span> <span class="no">Entry</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">render</span> <span class="ss">text</span><span class="p">:</span> <span class="n">entriesArray</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Try that.</p>
+
+<p>No error anymore! But all we see is an array of &#39;#&#39; symbols. What&#39;s happening?</p>
+
+<p>Well that&#39;s actually the entriesArray! It&#39;s filled with 35 <code>Entry</code> objects as expected. But since there is no string representation of our <code>Entry</code> object, it&#39;s just &#39;#&#39;.</p>
+
+<h3>Rendering Template/Views</h3>
+
+<p>Okay, we need a smart way to be able to render the <code>Entry</code> objects as a list that the user can see. For this, we need to use a <code>view</code>. This is basically the skeleton with which we will send our data.</p>
+
+<p>Let&#39;s make a new file here: <code>app/views/scrape_reddit.html.erb</code></p>
+
+<p>This will be our template/view that we render after grabbing the information. So, instead of rendering text at the end of our <code>scrape_reddit</code> action, we are going to make it render the view instead, with the <code>entriesArray</code>. We&#39;ll need to make a couple of changes to our <code>scrape_reddit</code> action in order to do this:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+
+  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+
+  <span class="k">def</span> <span class="nf">scrape_reddit</span>
+    <span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.reddit.com/&quot;</span><span class="p">))</span>
+
+    <span class="n">entries</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;.entry&#39;</span><span class="p">)</span>
+    <span class="vi">@entriesArray</span> <span class="o">=</span> <span class="o">[]</span>
+    <span class="n">entries</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span>
+      <span class="n">title</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+      <span class="n">link</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;p.title&gt;a&#39;</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="s1">&#39;href&#39;</span><span class="o">]</span>
+      <span class="vi">@entriesArray</span> <span class="o">&lt;&lt;</span> <span class="no">Entry</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">render</span> <span class="ss">template</span><span class="p">:</span> <span class="s1">&#39;scrape_reddit&#39;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>We&#39;ve made two changes:</p>
+
+<ol>
+<li><p>We have pre-pended the <code>entriesArray</code> variable with an <code>@</code> symbol. This is to make that variable an instance variable so that we can use it inside our view.</p></li>
+<li><p>At the end, we have now changed <code>render text: entriesArray</code> to <code>render template: &#39;scrape_reddit&#39;</code> so that Rails will know to send the data to the <code>scrape_reddit</code> view with the data context.</p></li>
+</ol>
+
+<p>Finally, let&#39;s go back to our view at <code>app/views/scrape_reddit.html.erb</code> and add the following:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;h1&gt;Reddit&#39;s Front Page&lt;/h1&gt;
+&lt;% @entriesArray.each do |entry| %&gt;
+  &lt;p&gt;&lt;%= entry.title %&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;%= entry.link %&gt;&lt;/p&gt;
+&lt;% end %&gt;
+</code></pre></div>
+<p>So now that we have access to our <code>@entriesArray</code> variable, we can try to display each entry&#39;s title and link property. To do that, we have:</p>
+
+<ul>
+<li><code>@entriesArray.each do |entry|</code> to start things off so that Rails will know to duplicate the following for each entry in <code>@entriesArray</code></li>
+<li><code>entry.title</code> and <code>entry.link</code> will allow Rails to render that <code>&lt;p&gt;</code> element with the corresponding data</li>
+</ul>
+
+<p>That&#39;s it! It&#39;s actually qutie straight-forward. You can now go into your browser, refresh the page, and see Reddit&#39;s front page entry titles and links!</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2015/03/22/how-to-web-dev/">
+            How to Learn Web Development
+            <small>22 Mar 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/02/17/entrepreneurs-should-not-do-mobile/">
+            Entrepreneurs Should Not do Mobile App Development
+            <small>17 Feb 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/02/16/code-snippets-3/">
+            Code Snippets: Part 3
+            <small>16 Feb 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      
+<!-- Add Disqus comments. -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'adrianli'; // required: replace example with your forum shortname
+  var disqus_identifier = "/2015/05/23/rails-scraping-tutorial/";
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58837515-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

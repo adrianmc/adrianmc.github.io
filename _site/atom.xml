@@ -4,13 +4,334 @@
  <title>adrian</title>
  <link href="http://adrianmcli.com/atom.xml" rel="self"/>
  <link href="http://adrianmcli.com/"/>
- <updated>2015-03-23T09:14:43-07:00</updated>
+ <updated>2015-05-25T10:51:43-07:00</updated>
  <id>http://adrianmcli.com</id>
  <author>
    <name>Adrian Li</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Simple Scraping Tutorial in Rails</title>
+   <link href="http://adrianmcli.com/2015/05/23/rails-scraping-tutorial/"/>
+   <updated>2015-05-23T00:00:00-07:00</updated>
+   <id>http://adrianmcli.com/2015/05/23/rails-scraping-tutorial</id>
+   <content type="html">&lt;p&gt;For this tutorial, we are going to build a site with Ruby on Rails that can scrape a particular webpage for some specific information. More specifically, this tutorial will walk you through how to come up with a scraper for the titles and links on &lt;a href=&quot;http://www.reddit.com/&quot;&gt;Reddit&amp;#39;s&lt;/a&gt; front page. You can go to the website and take a look to see what it is we are trying to obtain.&lt;/p&gt;
+
+&lt;h2&gt;Learning Objectives&lt;/h2&gt;
+
+&lt;p&gt;By doing this tutorial you should have an understanding of the following:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;How to approach scraping a website&lt;/li&gt;
+&lt;li&gt;How to use the Interactive Ruby Shell (IRB)&lt;/li&gt;
+&lt;li&gt;How to start a Ruby on Rails project&lt;/li&gt;
+&lt;li&gt;What a controller is&lt;/li&gt;
+&lt;li&gt;What a view is&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Step 1: Try it in the IRB&lt;/h2&gt;
+
+&lt;p&gt;The IRB is kind of like a sandbox, it allows you to play with (and execute) Ruby code without having to start a huge project or do anything complex at all. That&amp;#39;s why it is often a good idea to try things out in the IRB before we start building a whole site and getting into a lot of complexities, it&amp;#39;s always nice to play with ideas and make sure that they are feasible and that you have some idea of how you&amp;#39;re going to approach the problem you want to solve.&lt;/p&gt;
+
+&lt;h3&gt;Start the IRB&lt;/h3&gt;
+
+&lt;p&gt;This tutorial is going to assume that you have both Ruby and Rails already installed. The IRB comes with Ruby, so all you have to do is go to the terminal and type &lt;code&gt;irb&lt;/code&gt;. You should get a prompt like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;irb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can try to play around with it, but we won&amp;#39;t spend too much time on explaining the IRB itself. You can do simple math like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;irb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;irb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;irb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From this point on, I will omit writing the prompt &lt;code&gt;irb(main):001:0&amp;gt;&lt;/code&gt;, it&amp;#39;s assumed that you will be typing code at the prompt.&lt;/p&gt;
+
+&lt;h3&gt;Getting Ready to Scrape&lt;/h3&gt;
+
+&lt;p&gt;We will need a tool to help us open webpages in our code, and also the ability to go through the HTML and find what we want. The former is accomplished by a wrapper called &lt;code&gt;open-uri&lt;/code&gt; and the latter can be done with a parser called &lt;code&gt;nokogiri&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So for our first step, we will &lt;code&gt;require&lt;/code&gt; those two tools and then use them to load an entire page into our variable, &lt;code&gt;doc&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;open-uri&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;nokogiri&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Nokogiri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;http://www.reddit.com/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notice that the &lt;code&gt;open&lt;/code&gt; function opens the webpage, and then &lt;code&gt;Nokogiri&lt;/code&gt; parses it into the &lt;code&gt;doc&lt;/code&gt; variable as HTML. You will also see a lot of gibberish being displayed, but that&amp;#39;s actually the information on the page as parsed by &lt;code&gt;Nokogiri&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Identifying What We Want&lt;/h3&gt;
+
+&lt;p&gt;Now that we&amp;#39;ve grabbed the entire page in the &lt;code&gt;doc&lt;/code&gt; variable, we can now mess with it however we want. So let&amp;#39;s try to see how we can get the titles and links of the entries. To do that, we have to understand the structure of how the page is laid out. Let&amp;#39;s go to the browser and find out.&lt;/p&gt;
+
+&lt;p&gt;So go to your favourite browser, navigate to &lt;a href=&quot;http://www.reddit.com/&quot;&gt;reddit.com&lt;/a&gt;, right-click one of the entry titles and select &lt;code&gt;inspect element&lt;/code&gt;. From inspecting the element of an entry title, you should find something that looks like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;...
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;entry unvoted&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;title may-blank &amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://i.imgur.com/6aEop17.jpg&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;tabindex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;1&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;The ingredients section on this toothpaste tube explains where each ingredient comes from and what it does&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What this tells us, is that every entry is wrapped inside a &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; with the class &lt;code&gt;entry&lt;/code&gt;, and the title and link that we want is represented by an anchor tag &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; inside of a paragraph tag &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; with the class of &lt;code&gt;title&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s kind of confusing, so let&amp;#39;s start simple.&lt;/p&gt;
+
+&lt;h3&gt;Getting at the Information&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s start small and simply try to see if we can get a variable that represents all the entries on the page.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Many scrapers use something called X-Path, but for simplicity&amp;#39;s sake, we will use CSS selectors as Nokogiri provides that option for us.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s put all the &lt;code&gt;div&lt;/code&gt; tags on the page with a class of &lt;code&gt;entry&lt;/code&gt; inside a variable we will call &lt;code&gt;entries&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.entry&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let&amp;#39;s check how many we&amp;#39;ve got:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;35&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Great! If you go to the front page of Reddit.com in your browser, you can count exactly 35 links on the front page. We&amp;#39;re getting somewhere!&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#39;s try to get the specific title of just one post. We&amp;#39;ll try with just the first post for now, so we&amp;#39;ll use &lt;code&gt;entries[0]&lt;/code&gt; as our starting point and try to get more specific from there.&lt;/p&gt;
+
+&lt;p&gt;Try the following:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note that the selector string &lt;code&gt;p.title&amp;gt;a&lt;/code&gt; simply means the &lt;code&gt;p&lt;/code&gt; tag with a class of &lt;code&gt;title&lt;/code&gt; and then get the &lt;code&gt;a&lt;/code&gt; tag immediately under that.&lt;/p&gt;
+
+&lt;p&gt;If you take a careful look, you should see a representation of exactly the anchor tag we are looking for. In order to get the title and the link, we will use the following code:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;# title&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# link&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The code for the title is quite self-explanatory, it is simply the text of the tag itself. For the link, we have to find the &lt;code&gt;href&lt;/code&gt; attribute, and attributes are stored as the first child of the object, so that is why we type &lt;code&gt;[0][&amp;#39;href&amp;#39;]&lt;/code&gt; to get the link.&lt;/p&gt;
+
+&lt;p&gt;If you type those two lines above, you should be able to see the title and link as displayed by IRB.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#39;s see if we can list the titles for all 35 entries. Let&amp;#39;s use the &lt;code&gt;.each&lt;/code&gt; construct:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notice how we use &lt;code&gt;puts&lt;/code&gt; so that Ruby knows to display it onto our screen.&lt;/p&gt;
+
+&lt;p&gt;You should see the titles and their links being displayed in the terminal.&lt;/p&gt;
+
+&lt;h3&gt;Using a Class&lt;/h3&gt;
+
+&lt;p&gt;Okay great, we know how to get the information, but this is kind of unwieldy, so let&amp;#39;s attempt to create a class of &lt;code&gt;Entry&lt;/code&gt; objects. Each &lt;code&gt;Entry&lt;/code&gt; object will house the title and link for easy access. We will then try to create a whole array of these objects so it will be easy for us to manage and move around.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Entry&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;vi&quot;&gt;@title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;
+        &lt;span class=&quot;vi&quot;&gt;@link&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;kp&quot;&gt;attr_reader&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:title&lt;/span&gt;
+    &lt;span class=&quot;kp&quot;&gt;attr_reader&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:link&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note that every time we create an &lt;code&gt;Entry&lt;/code&gt; object, we will need to initialize it with a title and a link. The initialized values will be assigned to the instance variables &lt;code&gt;@title&lt;/code&gt; and &lt;code&gt;@link&lt;/code&gt; respectively. The title and link of each Entry object is also made readable by the &lt;code&gt;attr_reader&lt;/code&gt; lines.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#39;s try to make an array of Entry objects:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Create an empty array&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# For each entry, &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# we&amp;#39;re going to make an Entry object &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# and push it into the array&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;newEntry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newEntry&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can try runing something like &lt;code&gt;entriesArray[0].title&lt;/code&gt; or &lt;code&gt;entriesArray[0].link&lt;/code&gt; to ensure that this works.&lt;/p&gt;
+
+&lt;h3&gt;Refactoring&lt;/h3&gt;
+
+&lt;p&gt;Refactoring means to change the code to make it better (in any number of ways) while keeping its functionality the same.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s refactor the code so that it&amp;#39;s more readable. We can immediately place the newly created &lt;code&gt;Entry&lt;/code&gt; object into the &lt;code&gt;entriesArray&lt;/code&gt; instead of using the temporary variable &lt;code&gt;newEntry&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Should we refactor again so that we remove the need for the temporary variables of &lt;code&gt;title&lt;/code&gt; and &lt;code&gt;link&lt;/code&gt;?&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is not so easy to read, so that&amp;#39;s not good. We should refactor to be more concise when possible, but we should not reduce our code so much that it becomes hard to read.&lt;/p&gt;
+
+&lt;p&gt;Now we&amp;#39;re ready to make this a Rails app.&lt;/p&gt;
+
+&lt;h2&gt;Step 2: Make this a Rails App&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;#39;s open a brand new terminal and type in the following to start our brand new Rails app:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;rails new scraper
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After some setup stuff is run, you can &lt;code&gt;cd&lt;/code&gt; into the directory and then type in &lt;code&gt;rails server&lt;/code&gt; to run the app. Navigate to &lt;code&gt;http://localhost:3000&lt;/code&gt; in your browser to see the default app page.&lt;/p&gt;
+
+&lt;h3&gt;Routing, Actions, and Controllers&lt;/h3&gt;
+
+&lt;p&gt;The very basic explanation of what controllers do is this: When you try to access a website run by rails, a bunch of code in the rails app (called a router) will direct it to process a block of code (called an action) inside a particular file (called a controller).&lt;/p&gt;
+
+&lt;p&gt;Essentially, a controller is what processes a request sent to the server by a client. And each controller can house different actions.&lt;/p&gt;
+
+&lt;p&gt;For our example, let&amp;#39;s add the &lt;code&gt;scrape_reddit&lt;/code&gt; action inside our main controller in &lt;code&gt;app/controllers/application_controller.rb&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ApplicationController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActionController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
+
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;scrape_reddit&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;scrape reddit data here&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We just made an action inside the main application controller. Right now, it does nothing other than try to render the text &amp;quot;scrape reddit data here&amp;quot;, we will add more functionality to this later. We just want to see that it works first.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#39;s point to it with our router so that it loads right away when we load our webpage.&lt;/p&gt;
+
+&lt;p&gt;Add the following to &lt;code&gt;app/config/routes.rb&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Rails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;draw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;application#scrape_reddit&amp;#39;&lt;/span&gt;
+
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What we&amp;#39;re doing here is to say that the &lt;code&gt;root&lt;/code&gt; route should be directed to the &lt;code&gt;application&lt;/code&gt; controller and more specifically, the &lt;code&gt;scrape_reddit&lt;/code&gt; action within that controller.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#39;s test it. Go back to your browser and hit refresh. You should simply see the text &amp;quot;scrape reddit data here&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;Great, it works as expected! But we don&amp;#39;t just want to render the text, we want to scrape Reddit&amp;#39;s front page and then render the titles and links.&lt;/p&gt;
+
+&lt;h3&gt;Scraping a Page&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s start small and grab the front page like we did before in IRB. Just for fun we&amp;#39;ll also try to see what happens when we render the retrieved document.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;scrape_reddit&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;open-uri&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Nokogiri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;http://www.reddit.com/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Go back to the browser, refresh and see. No you&amp;#39;re not dreaming, it is actually pulling and displaying the reddit front page itself!&lt;/p&gt;
+
+&lt;p&gt;Of course this is overkill, so let&amp;#39;s get more specific and paste our previous code into the &lt;code&gt;scrape_reddit&lt;/code&gt; action so that we can grab just the titles and links.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;scrape_reddit&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Pull in the page&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;open-uri&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Nokogiri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;http://www.reddit.com/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# Narrow down on what we want and build the entries array&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.entry&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# We&amp;#39;ll just try to render the array and see what happens&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you tried to refresh and run the changes above, you&amp;#39;ll encounter an error. That&amp;#39;s because we forgot to define our &lt;code&gt;Entry&lt;/code&gt; class! So let&amp;#39;s do that right now, outside of the action itself:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ApplicationController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActionController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
+
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# Define the Entry object&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Entry&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;vi&quot;&gt;@title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;
+      &lt;span class=&quot;vi&quot;&gt;@link&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;kp&quot;&gt;attr_reader&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:title&lt;/span&gt;
+    &lt;span class=&quot;kp&quot;&gt;attr_reader&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:link&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;scrape_reddit&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;open-uri&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Nokogiri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;http://www.reddit.com/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.entry&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entriesArray&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Try that.&lt;/p&gt;
+
+&lt;p&gt;No error anymore! But all we see is an array of &amp;#39;#&amp;#39; symbols. What&amp;#39;s happening?&lt;/p&gt;
+
+&lt;p&gt;Well that&amp;#39;s actually the entriesArray! It&amp;#39;s filled with 35 &lt;code&gt;Entry&lt;/code&gt; objects as expected. But since there is no string representation of our &lt;code&gt;Entry&lt;/code&gt; object, it&amp;#39;s just &amp;#39;#&amp;#39;.&lt;/p&gt;
+
+&lt;h3&gt;Rendering Template/Views&lt;/h3&gt;
+
+&lt;p&gt;Okay, we need a smart way to be able to render the &lt;code&gt;Entry&lt;/code&gt; objects as a list that the user can see. For this, we need to use a &lt;code&gt;view&lt;/code&gt;. This is basically the skeleton with which we will send our data.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s make a new file here: &lt;code&gt;app/views/scrape_reddit.html.erb&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will be our template/view that we render after grabbing the information. So, instead of rendering text at the end of our &lt;code&gt;scrape_reddit&lt;/code&gt; action, we are going to make it render the view instead, with the &lt;code&gt;entriesArray&lt;/code&gt;. We&amp;#39;ll need to make a couple of changes to our &lt;code&gt;scrape_reddit&lt;/code&gt; action in order to do this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ApplicationController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActionController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
+
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;scrape_reddit&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;open-uri&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Nokogiri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;http://www.reddit.com/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.entry&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p.title&amp;gt;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;vi&quot;&gt;@entriesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;scrape_reddit&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We&amp;#39;ve made two changes:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;We have pre-pended the &lt;code&gt;entriesArray&lt;/code&gt; variable with an &lt;code&gt;@&lt;/code&gt; symbol. This is to make that variable an instance variable so that we can use it inside our view.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;At the end, we have now changed &lt;code&gt;render text: entriesArray&lt;/code&gt; to &lt;code&gt;render template: &amp;#39;scrape_reddit&amp;#39;&lt;/code&gt; so that Rails will know to send the data to the &lt;code&gt;scrape_reddit&lt;/code&gt; view with the data context.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Finally, let&amp;#39;s go back to our view at &lt;code&gt;app/views/scrape_reddit.html.erb&lt;/code&gt; and add the following:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;h1&amp;gt;Reddit&amp;#39;s Front Page&amp;lt;/h1&amp;gt;
+&amp;lt;% @entriesArray.each do |entry| %&amp;gt;
+  &amp;lt;p&amp;gt;&amp;lt;%= entry.title %&amp;gt;&amp;lt;/p&amp;gt;
+  &amp;lt;p&amp;gt;&amp;lt;%= entry.link %&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;% end %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So now that we have access to our &lt;code&gt;@entriesArray&lt;/code&gt; variable, we can try to display each entry&amp;#39;s title and link property. To do that, we have:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@entriesArray.each do |entry|&lt;/code&gt; to start things off so that Rails will know to duplicate the following for each entry in &lt;code&gt;@entriesArray&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;entry.title&lt;/code&gt; and &lt;code&gt;entry.link&lt;/code&gt; will allow Rails to render that &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; element with the corresponding data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;#39;s it! It&amp;#39;s actually qutie straight-forward. You can now go into your browser, refresh the page, and see Reddit&amp;#39;s front page entry titles and links!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>How to Learn Web Development</title>
