@@ -195,7 +195,7 @@ In fact, a refusal to look things up and an insistence on trying to remember the
 
 ## Multiple Pathways
 
-There are always going to be multiple ways to do something. So for example, I could've used a `<button>` element instead of an anchor tag. But the proces would be the same. I would've Google'd "how to run javascript when a button tag is pressed" and I would likewise have found a way to do what we did. There are also multiple ways to run javascript when an anchor tag is clicked.
+There are always going to be multiple ways to do something. So for example, I could've used a `<button>` element instead of an anchor tag. But the process would be the same. I would've Google'd "how to run javascript when a button tag is pressed" and I would likewise have found a way to do what we did. There are also multiple ways to run javascript when an anchor tag is clicked.
 
 It doesn't really matter what is the "best" way because we can always refactor. What's important is getting something that works. You can always go back and clean things up or use a *better* way of writing code. This brings me to the next point.
 

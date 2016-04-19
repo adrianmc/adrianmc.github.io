@@ -4,7 +4,7 @@
  <title>adrian</title>
  <link href="http://adrianmcli.com/atom.xml" rel="self"/>
  <link href="http://adrianmcli.com/"/>
- <updated>2015-05-25T10:51:43-07:00</updated>
+ <updated>2016-04-19T15:36:52+08:00</updated>
  <id>http://adrianmcli.com</id>
  <author>
    <name>Adrian Li</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Simple Scraping Tutorial in Rails</title>
    <link href="http://adrianmcli.com/2015/05/23/rails-scraping-tutorial/"/>
-   <updated>2015-05-23T00:00:00-07:00</updated>
+   <updated>2015-05-23T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/05/23/rails-scraping-tutorial</id>
    <content type="html">&lt;p&gt;For this tutorial, we are going to build a site with Ruby on Rails that can scrape a particular webpage for some specific information. More specifically, this tutorial will walk you through how to come up with a scraper for the titles and links on &lt;a href=&quot;http://www.reddit.com/&quot;&gt;Reddit&amp;#39;s&lt;/a&gt; front page. You can go to the website and take a look to see what it is we are trying to obtain.&lt;/p&gt;
 
@@ -57,7 +57,7 @@
 &lt;p&gt;So for our first step, we will &lt;code&gt;require&lt;/code&gt; those two tools and then use them to load an entire page into our variable, &lt;code&gt;doc&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;open-uri&amp;#39;&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;nokogiri&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Nokogiri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;http://www.reddit.com/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Nokogiri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;https://www.reddit.com/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Notice that the &lt;code&gt;open&lt;/code&gt; function opens the webpage, and then &lt;code&gt;Nokogiri&lt;/code&gt; parses it into the &lt;code&gt;doc&lt;/code&gt; variable as HTML. You will also see a lot of gibberish being displayed, but that&amp;#39;s actually the information on the page as parsed by &lt;code&gt;Nokogiri&lt;/code&gt;.&lt;/p&gt;
 
@@ -336,7 +336,7 @@
  <entry>
    <title>How to Learn Web Development</title>
    <link href="http://adrianmcli.com/2015/03/22/how-to-web-dev/"/>
-   <updated>2015-03-22T00:00:00-07:00</updated>
+   <updated>2015-03-22T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/03/22/how-to-web-dev</id>
    <content type="html">&lt;p&gt;I&amp;#39;ve been running into problems trying to teach people how to do web development. A lot of people lack the iterative mindset that is so crucial for a developer/designer. People are always in a rush to get things done and it often holds them back. Here is a short tutorial on my personal mindset when trying to make a webpage that changes the background colour to red whenever the user clicks something.&lt;/p&gt;
 
@@ -502,7 +502,7 @@
 
 &lt;h2&gt;Multiple Pathways&lt;/h2&gt;
 
-&lt;p&gt;There are always going to be multiple ways to do something. So for example, I could&amp;#39;ve used a &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; element instead of an anchor tag. But the proces would be the same. I would&amp;#39;ve Google&amp;#39;d &amp;quot;how to run javascript when a button tag is pressed&amp;quot; and I would likewise have found a way to do what we did. There are also multiple ways to run javascript when an anchor tag is clicked.&lt;/p&gt;
+&lt;p&gt;There are always going to be multiple ways to do something. So for example, I could&amp;#39;ve used a &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; element instead of an anchor tag. But the process would be the same. I would&amp;#39;ve Google&amp;#39;d &amp;quot;how to run javascript when a button tag is pressed&amp;quot; and I would likewise have found a way to do what we did. There are also multiple ways to run javascript when an anchor tag is clicked.&lt;/p&gt;
 
 &lt;p&gt;It doesn&amp;#39;t really matter what is the &amp;quot;best&amp;quot; way because we can always refactor. What&amp;#39;s important is getting something that works. You can always go back and clean things up or use a &lt;em&gt;better&lt;/em&gt; way of writing code. This brings me to the next point.&lt;/p&gt;
 
@@ -541,7 +541,7 @@
  <entry>
    <title>Entrepreneurs Should Not do Mobile App Development</title>
    <link href="http://adrianmcli.com/2015/02/17/entrepreneurs-should-not-do-mobile/"/>
-   <updated>2015-02-17T00:00:00-08:00</updated>
+   <updated>2015-02-17T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/02/17/entrepreneurs-should-not-do-mobile</id>
    <content type="html">&lt;p&gt;A lot of people want to go into mobile development because they want to make money. But that&amp;#39;s not the right way to look at it. You should be thinking about where you can get up to speed the fastest such that you can offer something valuable to the wider market. As a rule, I think entrepreneurs should not try to dive into the mobile app space unless...&lt;/p&gt;
 
@@ -608,7 +608,7 @@
  <entry>
    <title>Code Snippets: Part 3</title>
    <link href="http://adrianmcli.com/2015/02/16/code-snippets-3/"/>
-   <updated>2015-02-16T00:00:00-08:00</updated>
+   <updated>2015-02-16T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/02/16/code-snippets-3</id>
    <content type="html">&lt;p&gt;Now that &lt;a href=&quot;http://b4yougo.net&quot;&gt;b4YouGo&lt;/a&gt; has been launched, it&amp;#39;s time for my next project. As a result of this new endeavour, I&amp;#39;ll be learning much more about developing on Meteor.&lt;/p&gt;
 
@@ -787,7 +787,7 @@
  <entry>
    <title>Code Snippets: Part 2</title>
    <link href="http://adrianmcli.com/2015/01/29/code-snippets-2/"/>
-   <updated>2015-01-29T00:00:00-08:00</updated>
+   <updated>2015-01-29T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/01/29/code-snippets-2</id>
    <content type="html">&lt;p&gt;It&amp;#39;s that time again. I&amp;#39;ve learned a lot more since the last time I posted code-snippets. A lot of these were small issues where the solution was not immediately obvious and took a non-insiginificant amount of time for me to find it. Amongst them, I&amp;#39;ve also included a few references that I think are useful resources.&lt;/p&gt;
 
@@ -978,7 +978,7 @@ meteor deploy myapp.meteor.com
  <entry>
    <title>Day 28 Evaluation</title>
    <link href="http://adrianmcli.com/2015/01/28/28-day-evaluation/"/>
-   <updated>2015-01-28T00:00:00-08:00</updated>
+   <updated>2015-01-28T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/01/28/28-day-evaluation</id>
    <content type="html">&lt;p&gt;This is the first of my &lt;a href=&quot;/2015/01/14/the-beginning/&quot;&gt;28-day evaluations&lt;/a&gt;. In the last 28 days I’ve surprised myself with how much I had gotten done. But it wasn’t all accomplishments either, there were a lot of things that I have learned that I wouldn’t have learned if I didn’t have to struggle through them.&lt;/p&gt;
 
@@ -1028,7 +1028,7 @@ meteor deploy myapp.meteor.com
  <entry>
    <title>Lessons from Peter Voogd</title>
    <link href="http://adrianmcli.com/2015/01/22/peter-voogd/"/>
-   <updated>2015-01-22T00:00:00-08:00</updated>
+   <updated>2015-01-22T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/01/22/peter-voogd</id>
    <content type="html">&lt;p&gt;Peter Voogd is the author of &lt;a href=&quot;http://www.amazon.com/6-Months-Figures-Peter-Voogd-ebook/dp/B00QJITFC6&quot;&gt;6 Months to 6 Figures&lt;/a&gt;, a book which I have not yet read but plan to do so in the future. I&amp;#39;ve been listening to some podcasts from Hal Elrod of &lt;a href=&quot;http://themiraclemorning.com&quot;&gt;The Miracle Morning&lt;/a&gt;, and today I&amp;#39;m going to summarize a couple of episodes where Peter Voogd was featured. Below is a summary of the ideas I&amp;#39;ve learned from both of these episodes. They overlap a bit, so I just merged my notes into one. &lt;/p&gt;
 
@@ -1323,7 +1323,7 @@ I would say, &quot;How often do you review your weeks?&quot;
  <entry>
    <title>7 lessons from my first app failure</title>
    <link href="http://adrianmcli.com/2015/01/21/my-first-app-failure/"/>
-   <updated>2015-01-21T00:00:00-08:00</updated>
+   <updated>2015-01-21T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/01/21/my-first-app-failure</id>
    <content type="html">&lt;p&gt;In the summer of 2013, I had the idea to make a mobile app, so I called up one of my friends and got to work. Over a year later, we launched &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.aheadstudios.talkalytics&quot;&gt;Texty Time&lt;/a&gt;. The project took so long and not too many people used it, so I decided I never wanted to touch or even think about it again. Recently, I was reading &lt;a href=&quot;https://twitter.com/levelsio&quot;&gt;@levelsio&lt;/a&gt;&amp;#39;s blog on how he planned to start &lt;a href=&quot;https://levels.io/12-startups-12-months/&quot;&gt;12 startups in 12 months&lt;/a&gt;. For a lot of these projects, he had a project debrief page where he talks about what he learned from each of them. Suddenly, I realized that I myself have attemped (and failed) at making something akin to a &amp;quot;startup&amp;quot; as well (albeit very very humble and basic). This is the story of what I learned.&lt;/p&gt;
 
@@ -1464,7 +1464,7 @@ I would say, &quot;How often do you review your weeks?&quot;
  <entry>
    <title>Code Snippets: Part 1</title>
    <link href="http://adrianmcli.com/2015/01/21/code-snippets-1/"/>
-   <updated>2015-01-21T00:00:00-08:00</updated>
+   <updated>2015-01-21T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/01/21/code-snippets-1</id>
    <content type="html">&lt;p&gt;I learn a lot while building things, and I don&amp;#39;t want to forget what I&amp;#39;ve learned. It has happened many times in the past, so this time I have decided to keep a record of what I have learned so that I won&amp;#39;t have to redo any research that I&amp;#39;ve already done. Hopefully, this will be useful to other people as well.&lt;/p&gt;
 
@@ -1574,7 +1574,7 @@ I would say, &quot;How often do you review your weeks?&quot;
  <entry>
    <title>Providing Unique Value</title>
    <link href="http://adrianmcli.com/2015/01/16/providing-unique-value/"/>
-   <updated>2015-01-16T00:00:00-08:00</updated>
+   <updated>2015-01-16T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/01/16/providing-unique-value</id>
    <content type="html">&lt;p&gt;A while back, I found &lt;a href=&quot;http://moz.com/blog/how-to-provide-unique-value-in-your-content-whiteboard-friday&quot;&gt;this video&lt;/a&gt; from &lt;a href=&quot;http://moz.com/blog/how-to-provide-unique-value-in-your-content-whiteboard-friday&quot;&gt;DigitalPoint.com&lt;/a&gt;, an industry news site about business software. The number one rule of business (as I have recognized) is to create value. But how do you know if you&amp;#39;re creating something valuable? Well this video seemed to explain just that. The video focuses on SEO, but the value of the content here is much more than that.&lt;/p&gt;
 
@@ -1615,7 +1615,7 @@ I would say, &quot;How often do you review your weeks?&quot;
  <entry>
    <title>Book Summary: The 7 Day Startup</title>
    <link href="http://adrianmcli.com/2015/01/15/the-7-day-startup/"/>
-   <updated>2015-01-15T00:00:00-08:00</updated>
+   <updated>2015-01-15T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/01/15/the-7-day-startup</id>
    <content type="html">&lt;p&gt;I first heard about this book from this &lt;a href=&quot;http://www.reddit.com/r/startups/comments/2rz8aj/here_is_how_i_built_my_first_mvp_in_less_than_a/&quot;&gt;Reddit post&lt;/a&gt;. After Googling the book title, I found out that the theme of the book was to teach you to finally stop being a wantrepreneur and start executing on something. The story of the author, Dan Norris, is that he spent a year developing a startup which didn&amp;#39;t really go anywhere, and was actually going to have to look for a job because he was running out of money. However, with just a couple weeks left, he cranked out a wildly successful business by launching in 7 days. I thought this was very intriguing, so I bought it and gave it a read. Below are the major ideas I&amp;#39;ve been able to extract from this book.&lt;/p&gt;
 
@@ -1993,7 +1993,7 @@ I would say, &quot;How often do you review your weeks?&quot;
  <entry>
    <title>The Beginning</title>
    <link href="http://adrianmcli.com/2015/01/14/the-beginning/"/>
-   <updated>2015-01-14T00:00:00-08:00</updated>
+   <updated>2015-01-14T00:00:00+08:00</updated>
    <id>http://adrianmcli.com/2015/01/14/the-beginning</id>
    <content type="html">&lt;p&gt;This is the story of how I will attempt to start a profitable online business in a year and a half. I have an employment contract that will end in June of 2016 and that&amp;#39;s why I am on such a tight deadline. Nevertheless, I&amp;#39;ve always believed in &lt;a href=&quot;http://en.wikipedia.org/wiki/Parkinson%27s_law&quot;&gt;Parkinson&amp;#39;s Law&lt;/a&gt;.&lt;/p&gt;
 

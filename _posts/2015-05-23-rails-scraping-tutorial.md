@@ -52,7 +52,7 @@ So for our first step, we will `require` those two tools and then use them to lo
 ```ruby
 require 'open-uri'
 require 'nokogiri'
-doc = Nokogiri::HTML(open("http://www.reddit.com/"))
+doc = Nokogiri::HTML(open("https://www.reddit.com/"))
 ```
 
 Notice that the `open` function opens the webpage, and then `Nokogiri` parses it into the `doc` variable as HTML. You will also see a lot of gibberish being displayed, but that's actually the information on the page as parsed by `Nokogiri`.

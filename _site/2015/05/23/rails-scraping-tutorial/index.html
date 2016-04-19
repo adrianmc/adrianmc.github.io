@@ -99,7 +99,7 @@
       <span class="sidebar-nav-item">v1.0</span>
     </nav>
 
-    <p>&copy; 2015. All rights reserved.</p>
+    <p>&copy; 2016. All rights reserved.</p>
   </div>
 </div>
 
@@ -148,7 +148,7 @@
 <p>So for our first step, we will <code>require</code> those two tools and then use them to load an entire page into our variable, <code>doc</code>:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
 <span class="nb">require</span> <span class="s1">&#39;nokogiri&#39;</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.reddit.com/&quot;</span><span class="p">))</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;https://www.reddit.com/&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p>Notice that the <code>open</code> function opens the webpage, and then <code>Nokogiri</code> parses it into the <code>doc</code> variable as HTML. You will also see a lot of gibberish being displayed, but that&#39;s actually the information on the page as parsed by <code>Nokogiri</code>.</p>
 
