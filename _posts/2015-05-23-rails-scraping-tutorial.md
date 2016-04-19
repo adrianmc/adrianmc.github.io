@@ -5,7 +5,7 @@ comments: True
 tags: tutorial, rails
 ---
 
-For this tutorial, we are going to build a site with Ruby on Rails that can scrape a particular webpage for some specific information. More specifically, this tutorial will walk you through how to come up with a scraper for the titles and links on [Reddit's](http://www.reddit.com/) front page. You can go to the website and take a look to see what it is we are trying to obtain.
+For this tutorial, we are going to build a site with Ruby on Rails that can scrape a particular webpage for some specific information. More specifically, this tutorial will walk you through how to come up with a scraper for the titles and links on [Reddit's](https://www.reddit.com/) front page. You can go to the website and take a look to see what it is we are trying to obtain.
 
 ## Learning Objectives
 
@@ -61,7 +61,7 @@ Notice that the `open` function opens the webpage, and then `Nokogiri` parses it
 
 Now that we've grabbed the entire page in the `doc` variable, we can now mess with it however we want. So let's try to see how we can get the titles and links of the entries. To do that, we have to understand the structure of how the page is laid out. Let's go to the browser and find out.
 
-So go to your favourite browser, navigate to [reddit.com](http://www.reddit.com/), right-click one of the entry titles and select `inspect element`. From inspecting the element of an entry title, you should find something that looks like this:
+So go to your favourite browser, navigate to [reddit.com](https://www.reddit.com/), right-click one of the entry titles and select `inspect element`. From inspecting the element of an entry title, you should find something that looks like this:
 
 ```html
 ...
@@ -258,7 +258,7 @@ Let's start small and grab the front page like we did before in IRB. Just for fu
 ```ruby
 def scrape_reddit
   require 'open-uri'
-  doc = Nokogiri::HTML(open("http://www.reddit.com/"))
+  doc = Nokogiri::HTML(open("https://www.reddit.com/"))
   render text: doc 
 end
 ```
@@ -271,7 +271,7 @@ Of course this is overkill, so let's get more specific and paste our previous co
 def scrape_reddit
   # Pull in the page
   require 'open-uri'
-  doc = Nokogiri::HTML(open("http://www.reddit.com/"))
+  doc = Nokogiri::HTML(open("https://www.reddit.com/"))
 
   # Narrow down on what we want and build the entries array
   entries = doc.css('.entry')
@@ -306,7 +306,7 @@ class ApplicationController < ActionController::Base
 
   def scrape_reddit
     require 'open-uri'
-    doc = Nokogiri::HTML(open("http://www.reddit.com/"))
+    doc = Nokogiri::HTML(open("https://www.reddit.com/"))
 
     entries = doc.css('.entry')
     entriesArray = []
@@ -342,7 +342,7 @@ class ApplicationController < ActionController::Base
 
   def scrape_reddit
     require 'open-uri'
-    doc = Nokogiri::HTML(open("http://www.reddit.com/"))
+    doc = Nokogiri::HTML(open("https://www.reddit.com/"))
 
     entries = doc.css('.entry')
     @entriesArray = []
