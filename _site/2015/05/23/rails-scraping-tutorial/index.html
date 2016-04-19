@@ -108,7 +108,7 @@
       <div class="post">
   <h1 class="post-title">Simple Scraping Tutorial in Rails</h1>
   <span class="post-date">23 May 2015</span>
-  <p>For this tutorial, we are going to build a site with Ruby on Rails that can scrape a particular webpage for some specific information. More specifically, this tutorial will walk you through how to come up with a scraper for the titles and links on <a href="http://www.reddit.com/">Reddit&#39;s</a> front page. You can go to the website and take a look to see what it is we are trying to obtain.</p>
+  <p>For this tutorial, we are going to build a site with Ruby on Rails that can scrape a particular webpage for some specific information. More specifically, this tutorial will walk you through how to come up with a scraper for the titles and links on <a href="https://www.reddit.com/">Reddit&#39;s</a> front page. You can go to the website and take a look to see what it is we are trying to obtain.</p>
 
 <h2>Learning Objectives</h2>
 
@@ -156,7 +156,7 @@
 
 <p>Now that we&#39;ve grabbed the entire page in the <code>doc</code> variable, we can now mess with it however we want. So let&#39;s try to see how we can get the titles and links of the entries. To do that, we have to understand the structure of how the page is laid out. Let&#39;s go to the browser and find out.</p>
 
-<p>So go to your favourite browser, navigate to <a href="http://www.reddit.com/">reddit.com</a>, right-click one of the entry titles and select <code>inspect element</code>. From inspecting the element of an entry title, you should find something that looks like this:</p>
+<p>So go to your favourite browser, navigate to <a href="https://www.reddit.com/">reddit.com</a>, right-click one of the entry titles and select <code>inspect element</code>. From inspecting the element of an entry title, you should find something that looks like this:</p>
 <div class="highlight"><pre><code class="language-html" data-lang="html">...
 
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;entry unvoted&quot;</span><span class="nt">&gt;</span>
@@ -310,7 +310,7 @@
 <p>Let&#39;s start small and grab the front page like we did before in IRB. Just for fun we&#39;ll also try to see what happens when we render the retrieved document.</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">scrape_reddit</span>
   <span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
-  <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.reddit.com/&quot;</span><span class="p">))</span>
+  <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;https://www.reddit.com/&quot;</span><span class="p">))</span>
   <span class="n">render</span> <span class="ss">text</span><span class="p">:</span> <span class="n">doc</span> 
 <span class="k">end</span>
 </code></pre></div>
@@ -320,7 +320,7 @@
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">scrape_reddit</span>
   <span class="c1"># Pull in the page</span>
   <span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
-  <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.reddit.com/&quot;</span><span class="p">))</span>
+  <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;https://www.reddit.com/&quot;</span><span class="p">))</span>
 
   <span class="c1"># Narrow down on what we want and build the entries array</span>
   <span class="n">entries</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;.entry&#39;</span><span class="p">)</span>
@@ -352,7 +352,7 @@
 
   <span class="k">def</span> <span class="nf">scrape_reddit</span>
     <span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
-    <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.reddit.com/&quot;</span><span class="p">))</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;https://www.reddit.com/&quot;</span><span class="p">))</span>
 
     <span class="n">entries</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;.entry&#39;</span><span class="p">)</span>
     <span class="n">entriesArray</span> <span class="o">=</span> <span class="o">[]</span>
@@ -385,7 +385,7 @@
 
   <span class="k">def</span> <span class="nf">scrape_reddit</span>
     <span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
-    <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.reddit.com/&quot;</span><span class="p">))</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;https://www.reddit.com/&quot;</span><span class="p">))</span>
 
     <span class="n">entries</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;.entry&#39;</span><span class="p">)</span>
     <span class="vi">@entriesArray</span> <span class="o">=</span> <span class="o">[]</span>
